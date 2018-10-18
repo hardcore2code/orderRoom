@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南开大学</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/all.min.css" />
+
+    <link href="js/jqueryUI/jquery-ui.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
+    <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
+    <link rel="stylesheet" type="text/css" href="css/userDoAppointment.css">
+
+    <!-- <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script> -->
+    <script src="js/jqueryUI/external/jquery/jquery.js"></script>
+    <script src="js/jqueryUI/jquery-ui.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/common/Global.js"></script>
+    <script type="text/javascript" src="js/common/LogicUtil.js"></script>
+
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/userDoAppointment.js"></script>
+
+    
+    
+</head>
+<body onload="userDoAppointment.onLoad();">
+    <div id="userDoAppointment" class="leftToolBar_bg bgColor_leftToolBar">
+        <div class="leftToolBar_userInfoArea">
+            <img class="userInfoArea_headImg" src="image/head.png">
+            <div class="userInfoArea_infoBg">
+                <div class="userInfoArea_userName"></div>
+                <div class="userInfoArea_mailAddr fontColor_wordGrey"></div>
+            </div>
+        </div>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-admin common-manager" onclick="common.toWatchAppointment();">查看预约</button>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-user common-manager" style="margin-top: 10px;" onclick="common.toDoAppointment();">预约</button>
+        <div class="leftToolBar_signItemArea">
+            <a class="leftToolBar_signItem common-user common-manager" href="userAppointment.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">我的申请（<span class="myUnApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-manager" href="managerAppointment.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">预约审批（<span class="unManagerApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-admin" href="managerApproval.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">注册审批（<span class="unApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-admin" href="blacklist.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">黑名单（<span class="blackListCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-manager common-admin common-user" href="watchSummary.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">查看汇总</div>
+            </a>
+            <a class="leftToolBar_signItem" href="changePwd.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">修改密码</div>
+            </a>
+            <a class="leftToolBar_signItem" onclick="common.logout();">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImgClose fa fa-power-off"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">注销</div>
+            </a>
+        </div>
+    </div>
+    <div class="appointmentTopNavBarBg">
+        <div id="appointmentTopNav_page1" class="appointmentTopNavBar_item fontColor_topNavTitle appointmentTopNavBar_onChoose ">01 填入内容</div>
+        <div id="appointmentTopNav_page2" class="appointmentTopNavBar_item fontColor_topNavTitle">02 选择时间</div>
+        <div id="appointmentTopNav_page3" class="appointmentTopNavBar_item fontColor_topNavTitle">03 完成</div>
+    </div>
+    <div class="classroom_appointmentRightContent">
+        <div id="userDoAppointment_page1" class="userDoAppointment_bg">
+            <div class="userDoAppointment_title">基本内容</div>
+            <div class="userDoAppointment_itemSelectBg">
+                <div class="userDoAppointment_selectItemBg">
+                    <div class="fontColor_topNavTitle userDoAppointmentSelectItem_title">管理单位</div>
+                    <select id="userDoAppointment_managerCompany" class="userDoAppointmentSelectItem_select" onchange="userDoAppointment.changeSelect(this,'0');">
+                    </select>
+                </div>
+                <div class="userDoAppointment_selectItemBg">
+                     <div class="fontColor_topNavTitle userDoAppointmentSelectItem_title">楼宇</div>
+                     <select id="userDoAppointment_building" class="userDoAppointmentSelectItem_select" onchange="userDoAppointment.changeSelect(this,'1');">
+                    </select>
+                </div>
+                <div class="userDoAppointment_selectItemBg">
+                     <div class="fontColor_topNavTitle userDoAppointmentSelectItem_title">房间号</div>
+                     <select id="userDoAppointment_room" class="userDoAppointmentSelectItem_select" onchange="userDoAppointment.changeSelect(this,'2');">
+                    </select>
+                </div>
+            </div>
+            <div class="userDoAppointment_itemBg">
+                <div class="fontColor_topNavTitle userDoAppointmentSelectItem_title">预计人数</div>
+                <input id="userDoAppointment_personNum" class="userDoAppointmentSelectItem_personNumInput" type="number"/>
+                <div id="userDoAppointment_personNumText" class="userDoAppointmentSelectItem_hintText fontColor_blue">房间 xxx 平方米；可容纳 xxx 人</div>
+            </div>
+            <div class="userDoAppointment_itemBg">
+                <div class="fontColor_topNavTitle userDoAppointmentSelectItem_title">预约设备</div>
+                <div id="userDoAppointment_device" class="userDoAppointmentSelectItem_deviceInput"></div>
+                <div id="userDoAppointment_deviceText" class="userDoAppointmentSelectItem_deviceHintText fontColor_blue">可用设备：</div>
+            </div>
+            <div class="userDoAppointment_itemBg">
+                <div class="fontColor_topNavTitle userDoAppointmentSelectItem_title">会议内容</div>
+                <textarea id="userDoAppointment_meetingContent" class="userDoAppointmentSelectItem_meeting"></textarea>
+            </div>
+            <button class="fontColor_wordWhite userDoAppointment_nextPageBtn bgColor_blue" onclick="userDoAppointment.changePage('2')">下一步</button>
+        </div>
+        <div id="userDoAppointment_page2" class="userDoAppointment_bg">
+            <div class="userDoAppointment_title">选择时间</div>
+            <div class="userDoAppointment_typeItemBg" onclick="userDoAppointment.chooseAppointmentType(this,'0');">
+                <div class="userDoAppointment_typeItem">
+                    <div class="userDoAppointment_typeAreaSign">
+                        <img class="userDoAppointment_typeImg" src="image/checkbox_o.png">
+                    </div>
+                    <div class="userDoAppointment_typeAreaTitle">单次预定</div>
+                    <div class="userDoAppointment_typeAreaHint fontColor_wordGrey">模块化管理从8:00-22:00，每一小时为一个模块</div>
+                </div>
+            </div>
+            <div class="userDoAppointment_typeItemBg" onclick="userDoAppointment.chooseAppointmentType(this,'1');">
+                <div class="userDoAppointment_typeItem">
+                    <div class="userDoAppointment_typeAreaSign">
+                        <img class="userDoAppointment_typeImg" src="image/checkbox.png">
+                    </div>
+                    <div class="userDoAppointment_typeAreaTitle">批量预定</div>
+                    <div class="userDoAppointment_typeAreaHint fontColor_wordGrey">提供周、双周两种循环模式</div>
+                </div>
+            </div>
+            <div id="userDoAppointment_datepicker" class="userDoAppointment_datepicker"></div>
+            <div id="userDoAppointment_timepicker">
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_8" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('8');">8点-9点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_9" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('9');">9点-10点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_10" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('10');">10点-11点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_11" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('11');">11点-12点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_12" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('12');">12点-13点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_13" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('13');">13点-14点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_14" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('14');">14点-15点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_15" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('15');">15点-16点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_16" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('16');">16点-17点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_17" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('17');">17点-18点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_18" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('18');">18点-19点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_19" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('19');">19点-20点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_20" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('20');">20点-21点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="timeItem_21" class="userDoAppointment_timeItem" title="" onclick="userDoAppointment.onChooseTime('21');">21点-22点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+            </div>
+            <button class="fontColor_blue userDoAppointment_prevPageBtn bgColor_white" onclick="userDoAppointment.changePage('1')">上一步</button>
+            <button class="fontColor_wordWhite userDoAppointment_nextPageBtn bgColor_blue" onclick="userDoAppointment.changePage('')">下一步</button>
+        </div>
+        <div id="userDoAppointment_page3" class="userDoAppointment_bg">
+            <div class="userDoAppointment_successBg">
+                <div class="userDoAppointmentSuccess_bg">
+                    <div class="userDoAppointmentSuccess_imgArea">
+                        <i class="fa fa-check fontColor_timeOnChoose userDoAppointmentSuccess_img"></i>
+                    </div>
+                    <div class="userDoAppointmentSuccess_text">预约完成，请等待审批</div>
+                </div>
+            </div>
+        </div>
+        <div id="userDoAppointment_page4" class="userDoAppointment_bg">
+            <div class="userDoAppointment_title">选择时间</div>
+            <div class="userDoAppointment_batchItemTitle fontColor_title">循环模式</div>
+            <div class="userDoAppointmentBatch_bg"">
+                <div id="cycleMode_1" class="userDoAppointmentBatch_itemBg" onclick="userDoAppointment.chooseCycleMode('1');">周</div>
+            </div>
+            <div class="userDoAppointmentBatch_bg">
+                <div id="cycleMode_2" class="userDoAppointmentBatch_itemBg" onclick="userDoAppointment.chooseCycleMode('2');">双周</div>
+            </div>
+            <div class="userDoAppointment_batchItemTitle fontColor_title">循环模式截至日期</div>
+            <div id="batch_datepicker" class="userDoAppointment_batchItemDatePickerBg">
+                
+            </div>
+            <button class="fontColor_blue userDoAppointment_prevPageBtn bgColor_white" onclick="userDoAppointment.changePage('2')">上一步</button>
+            <button class="fontColor_wordWhite userDoAppointment_nextPageBtn bgColor_blue" onclick="userDoAppointment.changePage('3')">下一步</button>
+        </div>
+    </div>
+</body>
+</html>

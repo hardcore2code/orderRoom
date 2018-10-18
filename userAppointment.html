@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南开大学</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/all.min.css" />
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
+    <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
+    <link rel="stylesheet" type="text/css" href="css/managerApproval.css">
+    
+
+    <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common/Global.js"></script>
+    <script type="text/javascript" src="js/common/LogicUtil.js"></script>
+
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/userAppointment.js"></script>
+    
+</head>
+<body onload="userAppointment.onLoad();">
+    <div id="userAppointment" class="leftToolBar_bg bgColor_leftToolBar">
+        <div class="leftToolBar_userInfoArea">
+            <img class="userInfoArea_headImg" src="image/head.png">
+            <div class="userInfoArea_infoBg">
+                <div class="userInfoArea_userName"></div>
+                <div class="userInfoArea_mailAddr fontColor_wordGrey"></div>
+            </div>
+        </div>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-admin common-manager" onclick="common.toWatchAppointment();">查看预约</button>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-user common-manager" style="margin-top: 10px;" onclick="common.toDoAppointment();">预约</button>
+        <div class="leftToolBar_signItemArea">
+            <a class="leftToolBar_signItem common-user common-manager">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-down"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">我的申请（<span class="myUnApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-manager" href="managerAppointment.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">预约审批（<span class="unManagerApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-admin" href="managerApproval.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">注册审批（<span class="unApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-admin" href="blacklist.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">黑名单（<span class="blackListCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-manager common-admin common-user" href="watchSummary.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">查看汇总</div>
+            </a>
+            <a class="leftToolBar_signItem" href="changePwd.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">修改密码</div>
+            </a>
+            <a class="leftToolBar_signItem" onclick="common.logout();">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImgClose fa fa-power-off"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">注销</div>
+            </a>
+        </div>
+    </div>
+    <div class="topNavBarBg">
+        <div class="topNavBar_searchBg">
+            <form onsubmit="userAppointment.doSearch();return false">
+                <div class="topNavBarSearch_input bgColor_searchBg">
+                    <i class="fa fa-search fontColor_searchLogo"></i>
+                    <input id="userAppointment_searchInput" type="text" placeholder="search">    
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="classroom_rightContent">
+        <ul id="managerAppointment_classroomApprovalList">
+        </ul>
+        <div id="userAppointment_listMoreBtn" class="common_listMoreBtn bgColor_searchBg" onclick="userAppointment.getMoreListContent();">加载更多</div>
+    </div>
+</body>
+</html>

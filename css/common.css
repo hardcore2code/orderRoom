@@ -1,0 +1,131 @@
+/* 背景颜色 */
+.bgColor_leftToolBar{
+	background-color: #F8FAFB;
+}
+.bgColor_white{
+	background-color: #fff;
+}
+.bgColor_blue{
+	background-color: #5877FA;
+}
+.bgColor_pink{
+	background-color: #F0506E;
+}
+.bgColor_orange{
+	background-color: #E16626;
+}
+.bgColor_searchBg{
+	background-color: #F4F4F4;
+}
+.bgColor_greyPoint{
+	background-color: #636563;
+}
+/* 字体颜色 */
+.fontColor_wordGrey{
+	color: #999;
+}
+.fontColor_wordWhite{
+	color: #fff;
+}
+.fontColor_black{
+	color: #000;
+}
+.fontColor_blue{
+	color: #5877FA;
+}
+.fontColor_warnOrange{
+	color: #F8C51C;
+}
+.fontColor_warnGrey{
+	color: #97A4B1;
+}
+.fontColor_input{
+	color: #6E6E6E;
+}
+.fontColor_forgetPwd{
+	color: #AFB9C0;
+}
+.fontColor_title{
+	color: #4A4A4A;
+}
+.fontColor_searchLogo{
+	color: #c3c3c3;
+}
+.fontColor_listTypeAndTime{
+	color: #7C7C7C;
+}
+.fontColor_topNavTitle{
+	color: #D6DFDE;
+}
+.fontColor_timeOnChoose{
+	color: #29ddb9;
+}
+.fontColor_greyPoint{
+	color: #636563;
+}
+.fontColor_red{
+	color: red;
+}
+.appointmentTopNavBar_onChoose{
+	border-bottom: 2px solid #85898C!important;
+	color: #1A1B1D!important;
+}
+.userDoAppointment_timeItem:hover,.userDoAppointmentBatch_itemBg:hover{
+	background-color: #ededed;
+}
+.userDoAppointment_timeItemOnChoose{
+	background-color: #5877FA!important;
+	color: #fff;
+}
+.userDoAppointment_timeItemDisabled{
+	background-color: #666!important;
+	color: #fff;
+}
+.watchSummaryDetails_timeMyChoose{
+	background-color: #666!important;
+	color: #A5BED6;
+}
+.border_greyPoint{
+	border: 1px solid #636563!important;
+}
+body{
+	min-width: 800px;
+	min-height: 600px;
+	width: 100%;
+	height: 100%;
+}
+.common_listMoreBtn{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	text-align: center;
+	font-size: 15px;
+	display: none;
+}
+.common_toastBg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	z-index: 100000;
+}
+.common_toastText{
+	padding: 0 100px;
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	margin-top: 100px;
+	background-color: rgba(0,0,0,0.35);
+	font-size: 18px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.uda_deviceSelect{
+	background-color: #5877FA;
+	color: #fff;
+	border-color: #5877FA!important;
+}

@@ -1,0 +1,346 @@
+/* 宽度小于1024 */
+.leftToolBar_bg{
+	width: 312px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	z-index: 10;
+	opacity: 0.94;
+}
+.leftToolBar_userInfoArea{
+	width: 100%;
+	height: 130px;
+	float: left;
+	box-sizing: border-box;
+	padding-top: 46px;
+}
+.userInfoArea_headImg{
+	width: 52px;
+	height: 52px;
+	border-radius: 52px;
+	float: left;
+	margin: 0 16px 0 20px;
+}
+.userInfoArea_infoBg{
+	width: 224px;
+	height: 52px;
+	float: left;
+}
+.userInfoArea_userName{
+	width: 100%;
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	font-size: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.userInfoArea_mailAddr{
+	width: 100%;
+	float: left;
+	height: 28px;
+	font-size: 13px;
+    word-break: break-all;
+}
+.leftToolBar_button{
+	width: 254px;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+	font-size: 16px;
+	margin: 0 29px;
+	padding: 0;
+	border:none;
+	border-radius: 5px;
+}
+.leftToolBar_signItemArea{
+	float: left;
+	margin-top: 20px;
+	width: 100%;
+}
+.leftToolBar_signItem{
+	width: 100%;
+	float: left;
+	height: 34px;
+	box-sizing: border-box;
+	padding: 0 29px;
+}
+.leftToolBarSignItem_signImgArea{
+	width: 32px;
+	margin-right: 10px;
+	height: 100%;
+	line-height: 34px;
+	float: left;
+	text-align: center;
+}
+.leftToolBarSignItem_Title{
+	width: 212px;
+	height: 100%;
+	line-height: 34px;
+	float: left;
+	font-size: 17px;
+}
+.leftToolBarSignItem_signImg{
+	font-size: 20px;
+    vertical-align: middle;
+}
+.leftToolBarSignItem_signImgClose{
+	font-size: 16px;
+    /*vertical-align: middle;*/
+}
+.classroom_rightContent{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-left: 312px;
+	box-sizing: border-box;
+	z-index: 8;
+	padding-top: 56px;
+	min-width: 800px;
+}
+.classroom_appointmentRightContent{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-left: 312px;
+	box-sizing: border-box;
+	z-index: 8;
+	padding-top: 74px;
+	min-width: 800px;
+}
+/* 宽度大于1024px */
+@media screen and (min-width: 1024px) {
+	.leftToolBar_bg{
+		width: 400px;
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		z-index: 10;
+	}
+	.leftToolBar_userInfoArea{
+		width: 100%;
+		height: 168px;
+		float: left;
+		box-sizing: border-box;
+		padding-top: 50px;
+	}
+	.userInfoArea_headImg{
+		width: 70px;
+		height: 70px;
+		border-radius: 70px;
+		float: left;
+		margin: 0 23px 0 26px;
+	}
+	.userInfoArea_infoBg{
+		width: 270px;
+		height: 70px;
+		float: left;
+	}
+	.userInfoArea_userName{
+		width: 100%;
+		float: left;
+		height: 32px;
+		line-height: 32px;
+		font-size: 20px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.userInfoArea_mailAddr{
+		width: 100%;
+		float: left;
+		height: 38px;
+		font-size: 16px;
+	    word-break: break-all;
+	}
+	.leftToolBar_button{
+		width: 324px;
+		height: 48px;
+		text-align: center;
+		line-height: 48px;
+		font-size: 22px;
+		margin: 0 38px;
+		padding: 0;
+		border:none;
+		border-radius: 5px;
+	}
+	.leftToolBar_signItemArea{
+		float: left;
+		margin-top: 28px;
+		width: 100%;
+	}
+	.leftToolBar_signItem{
+		width: 100%;
+		float: left;
+		height: 44px;
+		box-sizing: border-box;
+		padding: 0 38px;
+	}
+	.leftToolBarSignItem_signImgArea{
+		width: 40px;
+		margin-right: 10px;
+		height: 100%;
+		line-height: 44px;
+		float: left;
+		text-align: center;
+	}
+	.leftToolBarSignItem_Title{
+		width: 274px;
+		height: 100%;
+		line-height: 44px;
+		float: left;
+		font-size: 20px;
+	}
+	.leftToolBarSignItem_signImg{
+		font-size: 24px;
+	    vertical-align: middle;
+	}
+	.leftToolBarSignItem_signImgClose{
+		font-size: 20px;
+	    /*vertical-align: middle;*/
+	}
+	.classroom_rightContent{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding-left: 400px;
+		box-sizing: border-box;
+		z-index: 8;
+		padding-top: 74px;
+	}
+	.classroom_appointmentRightContent{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding-left: 400px;
+		box-sizing: border-box;
+		z-index: 8;
+		padding-top: 92px;
+	}
+}
+/* 宽度大于1024px */
+@media screen and (min-width: 1500px) {
+	.leftToolBar_bg{
+		width: 586px;
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		z-index: 10;
+	}
+	.leftToolBar_userInfoArea{
+		width: 100%;
+		height: 242px;
+		float: left;
+		box-sizing: border-box;
+		padding-top: 72px;
+	}
+	.userInfoArea_headImg{
+		width: 100px;
+		height: 100px;
+		border-radius: 100px;
+		float: left;
+		margin: 0 30px 0 38px;
+	}
+	.userInfoArea_infoBg{
+		width: 418px;
+		height: 100px;
+		float: left;
+	}
+	.userInfoArea_userName{
+		width: 100%;
+		float: left;
+		height: 46px;
+		line-height: 46px;
+		font-size: 27px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.userInfoArea_mailAddr{
+		width: 100%;
+		float: left;
+		height: 54px;
+		font-size: 22px;
+	    word-break: break-all;
+	}
+	.leftToolBar_button{
+		width: 472px;
+		height: 70px;
+		text-align: center;
+		line-height: 70px;
+		font-size: 30px;
+		margin: 0 57px;
+		padding: 0;
+		border:none;
+		border-radius: 5px;
+	}
+	.leftToolBar_signItemArea{
+		float: left;
+		margin-top: 40px;
+		width: 100%;
+	}
+	.leftToolBar_signItem{
+		width: 100%;
+		float: left;
+		height: 62px;
+		box-sizing: border-box;
+		padding: 0 57px;
+	}
+	.leftToolBarSignItem_signImgArea{
+		width: 58px;
+		margin-right: 20px;
+		height: 100%;
+		line-height: 62px;
+		float: left;
+		text-align: center;
+	}
+	.leftToolBarSignItem_Title{
+		width: 394px;
+		height: 100%;
+		line-height: 62px;
+		float: left;
+		font-size: 27px;
+	}
+	.leftToolBarSignItem_signImg{
+		font-size: 27px;
+	    vertical-align: middle;
+	}
+	.leftToolBarSignItem_signImgClose{
+		font-size: 23px;
+	    /*vertical-align: middle;*/
+	}
+	.classroom_rightContent{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding-left: 586px;
+		box-sizing: border-box;
+		z-index: 8;
+		padding-top: 102px;
+	}
+	.classroom_appointmentRightContent{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding-left: 586px;
+		box-sizing: border-box;
+		z-index: 8;
+		padding-top: 136px;
+	}
+}

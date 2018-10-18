@@ -1,0 +1,153 @@
+#blacklist_registApprovalList{
+	float: left;
+	width: 100%;
+	margin: 0;
+	list-style-type:none;
+	padding: 0;
+}
+/* 宽度小于1024 */
+#blacklist_registApprovalList >li{
+	width: 100%;
+	float: left;
+	margin-top: 34px;
+	padding: 0 46px;
+	box-sizing: border-box;
+}
+.blacklist_newPoint{
+	width: 14px;
+	height: 14px;
+	border-radius: 14px;
+	position: absolute;
+	margin-left: -30px;
+	margin-top: 3px; 
+}
+.blacklist_batchItemDatePickerBg{
+	width: 100%;
+	float: left;
+	height: 56px;
+	padding: 0 9px;
+}
+.blacklist_line{
+	width: 30px;
+	line-height: 30px;
+	float: left;
+	height: 100%;
+	text-align: center;
+}
+.blacklist_batchDatePicker{
+	width: 30%;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	border: none;
+	box-shadow: 0 1px 3px #ccc;
+	padding: 0 9px;
+}
+.blacklist_batchItemTitle{
+	width: 100%;
+    height: 40px;
+    line-height: 40px;
+	float: left;
+	font-size: 13px;
+	padding: 0 9px;
+}
+
+
+/* 宽度大于1024px */
+@media screen and (min-width: 1024px) {
+	.blacklist_newPoint{
+		width: 18px;
+		height: 18px;
+		border-radius: 18px;
+		position: absolute;
+		margin-left: -39px;
+		margin-top: 5px; 
+	}
+	#blacklist_registApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 40px;
+		padding: 0 60px;
+		box-sizing: border-box;
+	}
+	.blacklist_batchItemDatePickerBg{
+		width: 100%;
+		float: left;
+		height: 70px;
+		padding: 0 12px;
+	}
+	.blacklist_line{
+		width: 36px;
+		line-height: 36px;
+		float: left;
+		height: 100%;
+		text-align: center;
+	}
+	.blacklist_batchDatePicker{
+		width: 30%;
+		height: 36px;
+		line-height: 36px;
+		float: left;
+		border: none;
+		box-shadow: 0 1px 3px #ccc;
+		padding: 0 12px;
+	}
+	.blacklist_batchItemTitle{
+		width: 100%;
+		height: 50px;
+    	line-height: 50px;
+		float: left;
+		font-size: 17px;
+		padding: 0 12px;
+	}
+
+}
+/* 宽度大于1024px */
+@media screen and (min-width: 1500px) {
+	.blacklist_newPoint{
+		width: 26px;
+		height: 26px;
+		border-radius: 26px;
+		position: absolute;
+		margin-left: -58px;
+		margin-top: 7px; 
+	}
+	#blacklist_registApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 64px;
+		padding: 0 90px;
+		box-sizing: border-box;
+	}
+	.blacklist_batchItemDatePickerBg{
+		width: 100%;
+		float: left;
+		height: 102px;
+		padding: 0 17px;
+	}
+	.blacklist_line{
+		width: 46px;
+		line-height: 46px;
+		float: left;
+		height: 100%;
+		text-align: center;
+	}
+	.blacklist_batchDatePicker{
+		width: 30%;
+		height: 46px;
+		line-height: 46px;
+		float: left;
+		border: none;
+		box-shadow: 0 1px 3px #ccc;
+		padding: 0 17px;
+	}
+	.blacklist_batchItemTitle{
+		width: 100%;
+		height: 62px;
+    	line-height: 62px;
+		float: left;
+		font-size: 25px;
+		padding: 0 17px;
+	}
+
+}

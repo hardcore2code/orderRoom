@@ -1,0 +1,558 @@
+/* 宽度小于1024 */
+.login_leftBg{
+	width: 100%;
+	height: 100%;
+	padding: 72px 30px 0;
+	box-sizing: border-box;
+	float: left;
+}
+.login_warnAreaBg{
+	width: 100%;
+	float: left;
+	height: 44px;
+	box-sizing: border-box;
+	border-bottom: 2px solid #F8C51C;
+	line-height: 43px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+    margin-bottom: 24px;
+    visibility: hidden;
+}
+.login_warnAreaLogoBg{
+	width: 46px;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+.login_warnAreaLogoBg >img{
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+}
+.login_warnAreaText{
+	width: 166px;
+	float: left;
+	height: 100%;
+	font-size: 14px;
+}
+.login_warnAreaCloseBtn{
+	width: 40px;
+	text-align: center;
+	height: 100%;
+	float: left;
+}
+.login_warnAreaCloseBtn >i{
+	font-size: 14px;
+}
+.login_inputAreaBg{
+	width: 100%;
+	float: left;
+	height: 36px;
+	margin-bottom: 24px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	line-height: 34px;
+}
+.login_input{
+	width: 210px;
+	height: 100%;
+	float: left;
+	box-sizing: border-box;
+	padding: 0  0 0 12px;
+	border: none;
+	font-size: 14px;
+}
+.login_forgetPwdArea{
+	width: 100%;
+	float: left;
+	height: 32px;
+	font-size: 14px;
+}
+.login_loginBtnArea{
+	width: 100%;
+	height: 55px;
+	float: left;
+	border-bottom: 1px solid #ddd;
+}
+.login_loginBtn{
+	width: 100%;
+	float: left;
+	text-align: center;
+	height: 36px;
+	border: none;
+	padding: 0;
+	font-size: 16px;
+	border-radius: 4px;
+}
+.login_registBtn{
+	width: 64px;
+	height: 22px;
+	float: right;
+	margin-top: 16px;
+	text-align: center;
+	padding: 0;
+	border: 1px solid #5877FA;
+	font-size: 12px;
+	border-radius: 4px;
+	line-height: 20px;
+}
+.login_contentBg{
+	width: 100%;
+	float: left;
+	padding: 0 48px;
+	box-sizing: border-box;
+	margin-top: 84px;
+}
+.login_universityName{
+	width: 100%;
+	float: left;
+	font-size: 17px;
+	margin-bottom: 8px;
+}
+.login_titleChinese{
+	width: 100%;
+	float: left;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.login_titleEnglish{
+	float: left;
+	width: 100%;
+	font-size: 12px;
+	line-height: 18px;
+}
+/* 注册 */
+.regist_leftBg{
+	width: 100%;
+	height: 100%;
+	padding: 42px 30px 0;
+	box-sizing: border-box;
+	float: left;
+}
+.regist_inputAreaBg{
+	width: 100%;
+	float: left;
+	height: 36px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	line-height: 34px;
+}
+.regist_registBtnArea{
+	width: 100%;
+	height: 71px;
+	float: left;
+	border-bottom: 1px solid #ddd;
+}
+.regist_registBtn{
+	width: 100%;
+	float: left;
+	text-align: center;
+	height: 36px;
+	border: none;
+	padding: 0;
+	font-size: 16px;
+	border-radius: 4px;
+	margin-top: 16px;
+}
+.login_warnText{
+	width: 100%;
+	float: left;
+	font-size: 13px;
+	margin-top: 20px;
+	font-style: italic;
+}
+
+/* 宽度大于1024px */
+@media screen and (min-width: 1024px) {
+	.login_leftBg{
+		width: 100%;
+		height: 100%;
+		padding: 95px 40px 0;
+		box-sizing: border-box;
+		float: left;
+	}
+	.login_warnAreaBg{
+		width: 100%;
+		float: left;
+		height: 54px;
+		box-sizing: border-box;
+		border-bottom: 2px solid #F8C51C;
+		line-height: 53px;
+	    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+	    margin-bottom: 32px;
+	    visibility: hidden;
+	}
+	.login_warnAreaLogoBg{
+		width: 58px;
+		height: 100%;
+		float: left;
+		text-align: center;
+	}
+	.login_warnAreaLogoBg >img{
+		width: 28px;
+		height: 28px;
+		vertical-align: middle;
+	}
+	.login_warnAreaText{
+		width: 208px;
+		float: left;
+		height: 100%;
+		font-size: 16px;
+	}
+	.login_warnAreaCloseBtn{
+		width: 54px;
+		text-align: center;
+		height: 100%;
+		float: left;
+	}
+	.login_warnAreaCloseBtn >i{
+		font-size: 16px;
+	}
+	.login_inputAreaBg{
+		width: 100%;
+		float: left;
+		height: 48px;
+		margin-bottom: 32px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		line-height: 46px;
+	}
+	.login_input{
+		width: 264px;
+		height: 100%;
+		float: left;
+		box-sizing: border-box;
+		padding: 0  0 0 16px;
+		border: none;
+		font-size: 17px;
+	}
+	.login_forgetPwdArea{
+		width: 100%;
+		float: left;
+		height: 40px;
+		font-size: 17px;
+	}
+	.login_loginBtnArea{
+		width: 100%;
+		height: 71px;
+		float: left;
+		border-bottom: 1px solid #ddd;
+	}
+	.login_loginBtn{
+		width: 100%;
+		float: left;
+		text-align: center;
+		height: 46px;
+		border: none;
+		padding: 0;
+		font-size: 20px;
+		border-radius: 4px;
+	}
+	.login_registBtn{
+		width: 82px;
+		height: 28px;
+		float: right;
+		margin-top: 20px;
+		text-align: center;
+		padding: 0;
+		border: 1px solid #5877FA;
+		font-size: 14px;
+		border-radius: 4px;
+		line-height: 26px;
+	}
+	.login_contentBg{
+		width: 100%;
+		float: left;
+		padding: 0 58px;
+		box-sizing: border-box;
+		margin-top: 106px;
+	}
+	.login_universityName{
+		width: 100%;
+		float: left;
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+	.login_titleChinese{
+		width: 100%;
+		float: left;
+		font-size: 24px;
+		margin-bottom: 12px;
+	}
+	.login_titleEnglish{
+		float: left;
+		width: 100%;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	/* 注册 */
+	.regist_leftBg{
+		width: 100%;
+		height: 100%;
+		padding: 52px 40px 0;
+		box-sizing: border-box;
+		float: left;
+	}
+	.regist_inputAreaBg{
+		width: 100%;
+		float: left;
+		height: 48px;
+		margin-bottom: 12px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		line-height: 46px;
+	}
+	.regist_registBtnArea{
+		width: 100%;
+		height: 91px;
+		float: left;
+		border-bottom: 1px solid #ddd;
+	}
+	.regist_registBtn{
+		width: 100%;
+		float: left;
+		text-align: center;
+		height: 46px;
+		border: none;
+		padding: 0;
+		font-size: 20px;
+		border-radius: 4px;
+		margin-top: 20px;
+	}
+	.login_warnText{
+		width: 100%;
+		float: left;
+		font-size: 17px;
+		margin-top: 24px;
+		font-style: italic;
+	}
+}
+/* 宽度大于1024px */
+@media screen and (min-width: 1500px) {
+	.login_leftBg{
+		width: 100%;
+		height: 100%;
+		padding: 137px 58px 0;
+		box-sizing: border-box;
+		float: left;
+	}
+	.login_warnAreaBg{
+		width: 100%;
+		float: left;
+		height: 78px;
+		box-sizing: border-box;
+		border-bottom: 2px solid #F8C51C;
+		line-height: 77px;
+	    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+	    margin-bottom: 46px;
+	    visibility: hidden;
+	}
+	.login_warnAreaLogoBg{
+		width: 82px;
+		height: 100%;
+		float: left;
+		text-align: center;
+	}
+	.login_warnAreaLogoBg >img{
+		width: 40px;
+		height: 40px;
+		vertical-align: middle;
+	}
+	.login_warnAreaText{
+		width: 316px;
+		float: left;
+		height: 100%;
+		font-size: 24px;
+	}
+	.login_warnAreaCloseBtn{
+		width: 72px;
+		text-align: center;
+		height: 100%;
+		float: left;
+	}
+	.login_warnAreaCloseBtn >i{
+		font-size: 20px;
+	}
+	.login_inputAreaBg{
+		width: 100%;
+		float: left;
+		height: 68px;
+		margin-bottom: 46px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		line-height: 66px;
+	}
+	.login_input{
+		width: 396px;
+		height: 100%;
+		float: left;
+		box-sizing: border-box;
+		padding: 0  0 0 24px;
+		border: none;
+		font-size: 24px;
+	}
+	.login_forgetPwdArea{
+		width: 100%;
+		float: left;
+		height: 56px;
+		font-size: 24px;
+	}
+	.login_loginBtnArea{
+		width: 100%;
+		height: 103px;
+		float: left;
+		border-bottom: 1px solid #ddd;
+	}
+	.login_loginBtn{
+		width: 100%;
+		float: left;
+		text-align: center;
+		height: 68px;
+		border: none;
+		padding: 0;
+		font-size: 30px;
+		border-radius: 4px;
+	}
+	.login_registBtn{
+		width: 120px;
+		height: 40px;
+		float: right;
+		margin-top: 32px;
+		text-align: center;
+		padding: 0;
+		border: 1px solid #5877FA;
+		font-size: 22px;
+		border-radius: 4px;
+		line-height: 38px;
+	}
+	.login_contentBg{
+		width: 100%;
+		float: left;
+		padding: 0 88px;
+		box-sizing: border-box;
+		margin-top: 160px;
+	}
+	.login_universityName{
+		width: 100%;
+		float: left;
+		font-size: 30px;
+		margin-bottom: 15px;
+	}
+	.login_titleChinese{
+		width: 100%;
+		float: left;
+		font-size: 34px;
+		margin-bottom: 18px;
+	}
+	.login_titleEnglish{
+		float: left;
+		width: 100%;
+		font-size: 20px;
+		line-height: 32px;
+	}
+	/* 注册 */
+	.regist_leftBg{
+		width: 100%;
+		height: 100%;
+		padding: 80px 58px 0;
+		box-sizing: border-box;
+		float: left;
+	}
+	.regist_inputAreaBg{
+		width: 100%;
+		float: left;
+		height: 68px;
+		margin-bottom: 18px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		line-height: 66px;
+	}
+	.regist_registBtnArea{
+		width: 100%;
+		height: 135px;
+		float: left;
+		border-bottom: 1px solid #ddd;
+	}
+	.regist_registBtn{
+		width: 100%;
+		float: left;
+		text-align: center;
+		height: 68px;
+		border: none;
+		padding: 0;
+		font-size: 30px;
+		border-radius: 4px;
+		margin-top: 32px;
+	}
+	.login_warnText{
+		width: 100%;
+		float: left;
+		font-size: 27px;
+		margin-top: 36px;
+		font-style: italic;
+	}
+
+}
+
+.classroom_forgetPwdModalBg{
+	width: 100%;
+	position: fixed;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+	box-sizing: border-box;
+	text-align: center;
+	z-index: 10;
+	display: none;
+}
+.classroom_forgetPwdModal{
+	width: 430px;
+	height: 280px;
+	background-color: white;
+	border-radius: 10px;
+	display: inline-block;
+	margin-top: 90px;
+}
+.forgetPwd_title{
+	width: 100%;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+}
+.forgetPwd_content{
+	width: 100%;
+	float: left;
+	height: 150px;
+	padding: 20px;
+	font-size: 15px;
+	text-align: left;
+}
+.forgetPwd_content >span{
+	font-size: 13px;
+	font-style: italic;
+}
+.forgetPwd_cancelBtn{
+	width: 150px;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 20px 0 0 40px; 
+	background-color: #999;
+	color: #fff;
+	cursor: pointer;
+}
+.forgetPwd_confirmBtn{
+	width: 150px;
+	float: right;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 5px;
+	margin: 20px 40px 0 0; 
+	background-color: #5877FA;
+	color: #fff; 
+	cursor: pointer;
+}

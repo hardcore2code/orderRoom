@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南开大学</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/all.min.css" />
+
+    <link href="js/jqueryUI/jquery-ui.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
+    <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
+    <link rel="stylesheet" type="text/css" href="css/userDoAppointment.css">
+
+    <!-- <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script> -->
+    <script src="js/jqueryUI/external/jquery/jquery.js"></script>
+    <script src="js/jqueryUI/jquery-ui.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/common/Global.js"></script>
+    <script type="text/javascript" src="js/common/LogicUtil.js"></script>
+
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/watchSummaryDetails.js"></script>
+
+    
+    
+</head>
+<body onload="watchSummaryDetails.onLoad();">
+    <div id="watchSummaryDetails" class="leftToolBar_bg bgColor_leftToolBar">
+        <div class="leftToolBar_userInfoArea">
+            <img class="userInfoArea_headImg" src="image/head.png">
+            <div class="userInfoArea_infoBg">
+                <div class="userInfoArea_userName"></div>
+                <div class="userInfoArea_mailAddr fontColor_wordGrey"></div>
+            </div>
+        </div>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-admin common-manager" onclick="common.toWatchAppointment();">查看预约</button>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-user common-manager" style="margin-top: 10px;" onclick="common.toDoAppointment();">预约</button>
+        <div class="leftToolBar_signItemArea">
+            <a class="leftToolBar_signItem common-user common-manager" href="userAppointment.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">我的申请（<span class="myUnApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-manager" href="managerAppointment.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">预约审批（<span class="unManagerApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-admin" href="managerApproval.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">注册审批（<span class="unApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-admin" href="blacklist.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">黑名单（<span class="blackListCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-manager common-admin common-user" href="watchSummary.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">查看汇总</div>
+            </a>
+            <a class="leftToolBar_signItem" href="changePwd.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">修改密码</div>
+            </a>
+            <a class="leftToolBar_signItem" onclick="common.logout();">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImgClose fa fa-power-off"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">注销</div>
+            </a>
+        </div>
+    </div>
+    <div class="topNavBarBg">
+        <div class="topNavBar_searchBg">
+            <div class="topNavBarSearch_input bgColor_searchBg">
+                <i class="fa fa-search fontColor_searchLogo"></i>
+                <input type="text" placeholder="search">
+            </div>
+        </div>
+    </div>
+    <div class="classroom_appointmentRightContent">
+        <div class="userDoAppointment_bg" style="display: block;">
+            <div class="userDoAppointment_title">查看汇总</div>
+            <div id="watchSummaryDetails_datepicker" class="userDoAppointment_datepicker" style="padding-top: 0;height: 300px"></div>
+            <div id="watchSummaryDetails_timepicker">
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_8" class="userDoAppointment_timeItem">8点-9点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_9" class="userDoAppointment_timeItem">9点-10点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_10" class="userDoAppointment_timeItem">10点-11点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_11" class="userDoAppointment_timeItem">11点-12点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_12" class="userDoAppointment_timeItem">12点-13点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_13" class="userDoAppointment_timeItem">13点-14点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_14" class="userDoAppointment_timeItem">14点-15点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_15" class="userDoAppointment_timeItem">15点-16点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_16" class="userDoAppointment_timeItem">16点-17点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_17" class="userDoAppointment_timeItem">17点-18点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_18" class="userDoAppointment_timeItem">18点-19点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_19" class="userDoAppointment_timeItem">19点-20点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_20" class="userDoAppointment_timeItem">20点-21点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_21" class="userDoAppointment_timeItem">21点-22点</div>
+                </div>
+                <div class="userDoAppointment_timeItemBg">
+                    <div id="wsdTimeItem_22" class="userDoAppointment_timeItem">22点-23点</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

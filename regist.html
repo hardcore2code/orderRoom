@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南开大学</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/all.min.css" />
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+    <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common/Global.js"></script>
+    <script type="text/javascript" src="js/common/LogicUtil.js"></script>
+
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/regist.js"></script>
+</head>
+<body onload="regist.onLoad();">
+    <div class="leftToolBar_bg bgColor_leftToolBar">
+        <div class="regist_leftBg">
+            <div id="regist_warn" class="login_warnAreaBg">
+                <div class="login_warnAreaLogoBg">
+                    <img src="image/warn.png">
+                </div>
+                <div class="login_warnAreaText fontColor_warnGrey"></div>
+                <div class="login_warnAreaCloseBtn" onclick="regist.closeWarnModal();">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="regist_inputAreaBg">
+                <input id="regist_name" type="text" name="username" class="login_input fontColor_input" placeholder="姓名">
+                <div class="login_warnAreaCloseBtn" onclick="regist.clearInputVal(this);">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="regist_inputAreaBg">
+                <input id="regist_phone" type="number" name="phone" class="login_input fontColor_input" placeholder="手机号">
+                <div class="login_warnAreaCloseBtn" onclick="regist.clearInputVal(this);">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="regist_inputAreaBg">
+                <input id="regist_card" type="number" name="card" class="login_input fontColor_input" placeholder="一卡通号">
+                <div class="login_warnAreaCloseBtn" onclick="regist.clearInputVal(this);">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="regist_inputAreaBg">
+                <input id="regist_mail" type="text" name="mail" class="login_input fontColor_input" placeholder="邮箱">
+                <div class="login_warnAreaCloseBtn" onclick="regist.clearInputVal(this);">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="regist_inputAreaBg">
+                <input id="regist_pwd" type="password" name="password" class="login_input fontColor_input" placeholder="密码">
+                <div class="login_warnAreaCloseBtn" onclick="regist.clearInputVal(this);">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="regist_inputAreaBg">
+                <input id="regist_repwd" type="password" name="rePassword" class="login_input fontColor_input" placeholder="确认密码">
+                <div class="login_warnAreaCloseBtn" onclick="regist.clearInputVal(this);">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="regist_registBtnArea">
+                <button class="regist_registBtn bgColor_blue fontColor_wordWhite" onclick="regist.doRegist();">注册</button>
+            </div>
+            <button class="login_registBtn fontColor_blue bgColor_white" onclick="regist.toLogin();">登录</button>
+        </div>
+    </div>
+    <div id="classroom_registBg" class="classroom_rightContent" style="background-size:100% 100%">
+        <div class="login_contentBg">
+            <div class="login_universityName fontColor_input">南开大学</div>
+            <div class="login_titleChinese fontColor_title">化学学院会议室、报告厅预约系统</div>
+            <div class="login_titleEnglish fontColor_input">Reservation system for conference room and lecture room of Chemistry College</div>
+        </div>
+    </div>
+</body>
+</html>

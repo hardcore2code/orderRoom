@@ -1,0 +1,220 @@
+.topNavBar_searchBg{
+	width: 100%;
+	float: left;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 0 3.5%;
+}
+
+/* 宽度小于1024 */
+.topNavBarBg{
+	width: 100%;
+	height: 56px;
+	line-height: 56px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 312px;
+	box-sizing: border-box;
+	z-index: 9;
+	min-width: 800px;
+}
+.appointmentTopNavBarBg{
+	width: 100%;
+	height: 74px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 26px 20px 0 332px;
+	box-sizing: border-box;
+	z-index: 9;
+	min-width: 800px;
+}
+.topNavBarSearch_input{
+	width: 100%;
+	height: 25px;
+	display: inline-block;
+	border-radius: 6px;
+	vertical-align: middle;
+	border: none;
+}
+.topNavBarSearch_input >input{
+	width: 100%;
+	height: 100%;
+	border: none;
+	padding-left: 32px;
+	box-sizing: border-box;
+	float: left;
+	background-color: unset;
+}
+.topNavBarSearch_input >i{
+	font-size: 14px;
+	margin-left: 9px;
+	position: absolute;
+	margin-top: 5px;
+}
+.appointmentTopNavBar_item{
+	width: 33.33%;
+	height: 100%;
+	float: left;
+	border-bottom: 1px solid #D9DDE1;
+	font-size: 14px;
+	text-align: center;
+	line-height: 48px;
+}
+/* 宽度大于1024px */
+@media screen and (min-width: 1024px) {
+	.topNavBarBg{
+		width: 100%;
+		height: 74px;
+		line-height: 74px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-left: 400px;
+		box-sizing: border-box;
+		z-index: 9;
+	}
+	.appointmentTopNavBarBg{
+		width: 100%;
+		height: 92px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+		z-index: 9;
+		padding: 34px 26px 0 426px;
+	}
+	.topNavBarSearch_input{
+		width: 100%;
+		height: 30px;
+		display: inline-block;
+		border-radius: 8px;
+		vertical-align: middle;
+		border: none;
+	}
+	.topNavBarSearch_input >input{
+		width: 100%;
+		height: 100%;
+		border: none;
+		padding-left: 40px;
+		box-sizing: border-box;
+		float: left;
+		background-color: unset;
+	}
+	.topNavBarSearch_input >i{
+		font-size: 18px;
+		margin-left: 11px;
+		position: absolute;
+		margin-top: 6px;
+	}
+	.topNavBarPaging_item{
+		width: 34px;
+		height: 100%;
+		line-height: 74px;
+		float: right;
+		text-align: center;
+	}
+	.topNavBarPaging_itemMiddle{
+		width: 34px;
+		height: 100%;
+		line-height: 72px;
+		float: right;
+		text-align: center;
+	}
+	.topNavBarPaging_itemMiddle >i{
+		font-size: 16px;
+		vertical-align: middle;
+	}
+	.topNavBarPaging_item >i{
+		font-size: 20px;
+		vertical-align: middle;
+	}
+	.appointmentTopNavBar_item{
+		width: 33.33%;
+		height: 100%;
+		float: left;
+		border-bottom: 1px solid #D9DDE1;
+		font-size: 17px;
+		text-align: center;
+		line-height: 58px;
+	}
+}
+/* 宽度大于1024px */
+@media screen and (min-width: 1500px) {
+	.topNavBarBg{
+		width: 100%;
+		height: 102px;
+		line-height: 102px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-left: 586px;
+		box-sizing: border-box;
+		z-index: 9;
+	}
+	.appointmentTopNavBarBg{
+		width: 100%;
+		height: 136px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+		z-index: 9;
+		padding: 50px 38px 0 624px;
+	}
+	.topNavBarSearch_input{
+		width: 100%;
+		height: 46px;
+		display: inline-block;
+		border-radius: 8px;
+		vertical-align: middle;
+		border: none;
+	}
+	.topNavBarSearch_input >input{
+		width: 100%;
+		height: 100%;
+		border: none;
+		padding-left: 60px;
+		box-sizing: border-box;
+		float: left;
+		background-color: unset;
+	}
+	.topNavBarSearch_input >i{
+		font-size: 26px;
+		margin-left: 17px;
+		position: absolute;
+		margin-top: 10px;
+	}
+	.topNavBarPaging_item{
+		width: 50px;
+		height: 100%;
+		line-height: 102px;
+		float: right;
+		text-align: center;
+	}
+	.topNavBarPaging_itemMiddle{
+		width: 50px;
+		height: 100%;
+		line-height: 100px;
+		float: right;
+		text-align: center;
+	}
+	.topNavBarPaging_itemMiddle >i{
+		font-size: 22px;
+		vertical-align: middle;
+	}
+	.topNavBarPaging_item >i{
+		font-size: 26px;
+		vertical-align: middle;
+	}
+	.appointmentTopNavBar_item{
+		width: 33.33%;
+		height: 100%;
+		float: left;
+		border-bottom: 1px solid #D9DDE1;
+		font-size: 24px;
+		text-align: center;
+		line-height: 86px;
+	}
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南开大学</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+    <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common/Global.js"></script>
+    <script type="text/javascript" src="js/common/LogicUtil.js"></script>
+
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</head>
+<body onload="login.onLoad();">
+    <div class="leftToolBar_bg bgColor_leftToolBar">
+        <div class="login_leftBg">
+            <div id="login_warn" class="login_warnAreaBg">
+                <div class="login_warnAreaLogoBg">
+                    <img src="image/warn.png">
+                </div>
+                <div class="login_warnAreaText fontColor_warnGrey"></div>
+                <div class="login_warnAreaCloseBtn" onclick="login.closeWarnModal();">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="login_inputAreaBg">
+                <input id="login_username" type="text" name="username" class="login_input fontColor_input" placeholder="手机号">
+                <div class="login_warnAreaCloseBtn" onclick="login.clearInput(this);">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="login_inputAreaBg">
+                <input id="login_password" type="password" name="password" class="login_input fontColor_input" placeholder="密码">
+                <div class="login_warnAreaCloseBtn" onclick="login.clearInput(this);">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="login_forgetPwdArea">
+                <a class="fontColor_forgetPwd" onclick="login.forgetPwdModal();">忘记密码</a>
+            </div>
+            <div class="login_loginBtnArea">
+                <button class="login_loginBtn bgColor_blue fontColor_wordWhite" onclick="login.doLogin();">登录</button>
+            </div>
+            <button class="login_registBtn fontColor_blue bgColor_white" onclick="login.toRegist();">注册</button>
+
+            <div class="login_warnText fontColor_blue">仅供化学学院教工注册使用<br/>如使用360浏览器，请使用极速模式</div>
+
+        </div>
+    </div>
+    <div id="classroom_loginBg" class="classroom_rightContent" style="background-size:100% 100%">
+        <div class="login_contentBg">
+            <div class="login_universityName fontColor_input">南开大学</div>
+            <div class="login_titleChinese fontColor_title">化学学院会议室、报告厅预约系统</div>
+            <div class="login_titleEnglish fontColor_input">Reservation system for conference room and lecture room of Chemistry College</div>
+        </div>
+    </div>
+    <div id="classroom_forgetPwdModal" class="classroom_forgetPwdModalBg">
+        <div class="classroom_forgetPwdModal">
+            <div class="forgetPwd_title">忘记密码</div>
+            <div class="forgetPwd_content">是否决定重置密码<span>（重置后新密码将会发送到您的邮箱中，请注意查收）</span></div>
+            <div class="forgetPwd_cancelBtn" onclick="login.doCancel()">取消</div>
+            <div class="forgetPwd_confirmBtn" onclick="login.doReset()">确认</div>
+        </div>
+    </div>
+</body>
+</html>

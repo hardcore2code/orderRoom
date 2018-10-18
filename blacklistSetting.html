@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南开大学</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/all.min.css" />
+
+    <link href="js/jqueryUI/jquery-ui.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
+    <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
+    <link rel="stylesheet" type="text/css" href="css/userDoAppointment.css">
+    <link rel="stylesheet" type="text/css" href="css/blacklist.css">
+
+    <!-- <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script> -->
+    <script src="js/jqueryUI/external/jquery/jquery.js"></script>
+    <script src="js/jqueryUI/jquery-ui.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/common/Global.js"></script>
+    <script type="text/javascript" src="js/common/LogicUtil.js"></script>
+
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/blacklistSetting.js"></script>
+
+    
+    
+</head>
+<body onload="blacklistSetting.onLoad();">
+    <div id="blacklistSetting" class="leftToolBar_bg bgColor_leftToolBar">
+        <div class="leftToolBar_userInfoArea">
+            <img class="userInfoArea_headImg" src="image/head.png">
+            <div class="userInfoArea_infoBg">
+                <div class="userInfoArea_userName">admin</div>
+                <div class="userInfoArea_mailAddr fontColor_wordGrey">admin@163.com</div>
+            </div>
+        </div>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-admin common-manager" onclick="common.toWatchAppointment();">查看预约</button>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-user common-manager" style="margin-top: 10px;" onclick="common.toDoAppointment();">预约</button>
+        <div class="leftToolBar_signItemArea">
+            <a class="leftToolBar_signItem common-user common-manager" href="userAppointment.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">我的申请（<span class="myUnApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-admin" href="managerApproval.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">注册审批（<span class="unApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-manager">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">预约审批（<span class="unManagerApprovedCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-admin" href="blacklist.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">黑名单（<span class="blackListCount"></span>）</div>
+            </a>
+            <a class="leftToolBar_signItem common-manager common-admin common-user" href="watchSummary.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">查看汇总</div>
+            </a>
+            <a class="leftToolBar_signItem" href="changePwd.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">修改密码</div>
+            </a>
+            <a class="leftToolBar_signItem" onclick="common.logout();">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImgClose fa fa-power-off"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">注销</div>
+            </a>
+        </div>
+    </div>
+    <div class="classroom_appointmentRightContent" style="padding-top: 0;">
+        <div class="userDoAppointment_bg" style="display: block;">
+            <div class="userDoAppointment_title">选择时间</div>
+            <div class="userDoAppointment_typeItemBg" onclick="blacklistSetting.chooseAppointmentType(this,'0');" style="display: none;">
+                <div class="userDoAppointment_typeItem">
+                    <div class="userDoAppointment_typeAreaSign">
+                        <img class="userDoAppointment_typeImg" src="image/checkbox_o.png">
+                    </div>
+                    <div class="userDoAppointment_typeAreaTitle">单次</div>
+                    <div class="userDoAppointment_typeAreaHint fontColor_wordGrey">只对当次时间段做黑名单限制，当超出时间范围，自动解除</div>
+                </div>
+            </div>
+            <div class="userDoAppointment_typeItemBg" onclick="blacklistSetting.chooseAppointmentType(this,'1');" style="display: none;">
+                <div class="userDoAppointment_typeItem">
+                    <div class="userDoAppointment_typeAreaSign">
+                        <img class="userDoAppointment_typeImg" src="image/checkbox.png">
+                    </div>
+                    <div class="userDoAppointment_typeAreaTitle">批量</div>
+                    <div class="userDoAppointment_typeAreaHint fontColor_wordGrey">永久设置为黑名单</div>
+                </div>
+            </div>
+            <div class="blacklist_batchItemTitle fontColor_title">时间范围</div>
+            <div class="blacklist_batchItemDatePickerBg">
+                <input id="batchDatepicker_beginDate" type="text" class="blacklist_batchDatePicker">
+                <div class="blacklist_line">-</div>
+                <input id="batchDatepicker_endDate" type="text" class="blacklist_batchDatePicker">
+            </div>
+            <button class="fontColor_blue userDoAppointment_prevPageBtn bgColor_white" onclick="blacklistSetting.toBlacklist()">上一步</button>
+            <button class="fontColor_wordWhite userDoAppointment_nextPageBtn bgColor_blue" onclick="blacklistSetting.doSubmitSetting()">完成</button>
+        </div>
+    </div>
+</body>
+</html>

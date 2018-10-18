@@ -1,0 +1,165 @@
+/* 宽度小于1024 */
+.changePwd_input{
+	width: 100%;
+	height: 40px;
+	float: left;
+	border: 1px solid #E7EBEF;
+	border-radius: 4px;
+	padding-left: 16px;
+}
+.changePwd_warnArea{
+	width: 100%;
+	box-sizing: border-box;
+	float: left;
+	padding: 0 9px;
+	visibility: hidden;
+}
+.changePwd_warnAreaBg{
+	width: 100%;
+	float: left;
+	height: 44px;
+	box-sizing: border-box;
+	border-bottom: 2px solid #F8C51C;
+	line-height: 43px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+    margin-bottom: 24px;
+}
+
+.changePwd_warnAreaLogoBg{
+	width: 46px;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+.changePwd_warnAreaLogoBg >img{
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+}
+.changePwd_warnAreaText{
+	width: 70%;
+	float: left;
+	height: 100%;
+	font-size: 14px;
+}
+.changePwd_warnAreaCloseBtn{
+	width: 40px;
+	text-align: center;
+	height: 100%;
+	float: right;
+}
+.changePwd_warnAreaCloseBtn >i{
+	font-size: 14px;
+}
+	
+	
+
+/* 宽度大于1024px */
+@media screen and (min-width: 1024px) {
+	.changePwd_input{
+		width: 100%;
+		height: 50px;
+		float: left;
+		border: 1px solid #E7EBEF;
+		border-radius: 4px;
+		padding-left: 20px;
+	}
+	.changePwd_warnArea{
+		width: 100%;
+		box-sizing: border-box;
+		float: left;
+		padding: 0 12px;
+		visibility: hidden;
+	}
+	.changePwd_warnAreaBg{
+		width: 100%;
+		float: left;
+		height: 54px;
+		box-sizing: border-box;
+		border-bottom: 2px solid #F8C51C;
+		line-height: 53px;
+	    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+	    margin-bottom: 32px;
+	}
+	.changePwd_warnAreaLogoBg{
+		width: 58px;
+		height: 100%;
+		float: left;
+		text-align: center;
+	}
+	.changePwd_warnAreaLogoBg >img{
+		width: 28px;
+		height: 28px;
+		vertical-align: middle;
+	}
+	.changePwd_warnAreaText{
+		width: 70%;
+		float: left;
+		height: 100%;
+		font-size: 16px;
+	}
+	.changePwd_warnAreaCloseBtn{
+		width: 54px;
+		text-align: center;
+		height: 100%;
+		float: right;
+	}
+	.changePwd_warnAreaCloseBtn >i{
+		font-size: 16px;
+	}
+}
+/* 宽度大于1024px */
+@media screen and (min-width: 1500px) {
+	.changePwd_input{
+		width: 100%;
+		height: 72px;
+		float: left;
+		border: 1px solid #E7EBEF;
+		border-radius: 4px;
+		padding-left: 32px;
+	}
+	.changePwd_warnArea{
+		width: 100%;
+		box-sizing: border-box;
+		float: left;
+		padding: 0 17px;
+		visibility: hidden;
+	}
+	.changePwd_warnAreaBg{
+		width: 100%;
+		float: left;
+		height: 78px;
+		box-sizing: border-box;
+		border-bottom: 2px solid #F8C51C;
+		line-height: 77px;
+	    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+	    margin-bottom: 46px;
+	}
+	.changePwd_warnAreaLogoBg{
+		width: 82px;
+		height: 100%;
+		float: left;
+		text-align: center;
+	}
+	.changePwd_warnAreaLogoBg >img{
+		width: 40px;
+		height: 40px;
+		vertical-align: middle;
+	}
+	.changePwd_warnAreaText{
+		width: 70%;
+		float: left;
+		height: 100%;
+		font-size: 24px;
+	}
+	.changePwd_warnAreaCloseBtn{
+		width: 72px;
+		text-align: center;
+		height: 100%;
+		float: right;
+	}
+	.changePwd_warnAreaCloseBtn >i{
+		font-size: 20px;
+	}
+}
+

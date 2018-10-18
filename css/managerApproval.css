@@ -1,0 +1,233 @@
+#managerApproval_registApprovalList{
+	float: left;
+	width: 100%;
+	margin: 0;
+	list-style-type:none;
+	padding: 0;
+}
+.registApprovalList_type{
+	height: 100%;
+	float: left;
+}
+.registApprovalList_time{
+	height: 100%;
+	float: right;
+}
+.registApprovalList_name{
+	float: left;
+}
+/* 预约审批 */
+#managerAppointment_classroomApprovalList{
+	float: left;
+	width: 100%;
+	margin: 0;
+	list-style-type:none;
+	padding: 0;
+	margin-bottom: 30px;
+}
+#watchAppointment_classroomApprovalList{
+	float: left;
+	width: 100%;
+	margin: 0;
+	list-style-type:none;
+	padding: 0;
+	margin-bottom: 30px;
+}
+#watchSummary_classroomApprovalList{
+	float: left;
+	width: 100%;
+	margin: 0;
+	list-style-type:none;
+	padding: 0;	
+	margin-bottom: 30px;
+}
+.classroomApprovalList_leftText{
+	float: left;
+	height: 100%;
+}
+.classroomApprovalList_RightText{
+	float: right;
+	height: 100%;
+}
+/* 宽度小于1024 */
+#managerApproval_registApprovalList >li{
+	width: 100%;
+	float: left;
+	margin-top: 34px;
+	padding: 0 46px;
+	box-sizing: border-box;
+}
+.registApprovalList_newPoint{
+	width: 14px;
+	height: 14px;
+	border-radius: 14px;
+	position: absolute;
+	margin-left: -30px;
+	margin-top: 21px; 
+}
+.registApprovalList_typeAndTime{
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	word-break: break-all;
+}
+.registApprovalList_nameAndOperate{
+	width: 100%;
+	float: left;
+	height: 24px;
+	font-size: 17px;
+}
+.registApprovalList_button{
+	width: 54px;
+	height: 100%;
+	text-align: center;
+	line-height: 24px;
+	float: right;
+	border: none;
+	font-size: 13px;
+}
+
+#managerAppointment_classroomApprovalList >li{
+	width: 100%;
+	float: left;
+	margin-top: 34px;
+	padding: 0 46px;
+	box-sizing: border-box;
+}
+#watchAppointment_classroomApprovalList >li{
+	width: 100%;
+	float: left;
+	margin-top: 34px;
+	padding: 0 46px;
+	box-sizing: border-box;
+}
+#watchSummary_classroomApprovalList >li{
+	width: 100%;
+	float: left;
+	margin-top: 34px;
+	padding: 0 46px;
+	box-sizing: border-box;
+}
+
+/* 宽度大于1024px */
+@media screen and (min-width: 1024px) {
+	#managerApproval_registApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 40px;
+		padding: 0 60px;
+		box-sizing: border-box;
+	}
+	.registApprovalList_newPoint{
+		width: 18px;
+		height: 18px;
+		border-radius: 18px;
+		position: absolute;
+		margin-left: -39px;
+		margin-top: 26px; 
+	}
+	.registApprovalList_typeAndTime{
+		width: 100%;
+		float: left;
+		font-size: 17px;
+		word-break: break-all;
+	}
+	.registApprovalList_nameAndOperate{
+		width: 100%;
+		float: left;
+		height: 30px;
+		font-size: 20px;
+	}
+	.registApprovalList_button{
+		width: 70px;
+		height: 100%;
+		text-align: center;
+		line-height: 30px;
+		float: right;
+		border: none;
+		font-size: 17px;
+	}
+
+	#managerAppointment_classroomApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 40px;
+		padding: 0 60px;
+		box-sizing: border-box;
+	}
+	#watchAppointment_classroomApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 40px;
+		padding: 0 60px;
+		box-sizing: border-box;
+	}
+	#watchSummary_classroomApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 40px;
+		padding: 0 60px;
+		box-sizing: border-box;
+	}
+}
+/* 宽度大于1024px */
+@media screen and (min-width: 1500px) {
+	#managerApproval_registApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 64px;
+		padding: 0 90px;
+		box-sizing: border-box;
+	}
+	.registApprovalList_newPoint{
+		width: 26px;
+		height: 26px;
+		border-radius: 26px;
+		position: absolute;
+		margin-left: -58px;
+		margin-top: 40px; 
+	}
+	.registApprovalList_typeAndTime{
+		width: 100%;
+		float: left;
+		font-size: 26px;
+		word-break: break-all;
+	}
+	.registApprovalList_nameAndOperate{
+		width: 100%;
+		float: left;
+		height: 42px;
+		font-size: 30px;
+	}
+	.registApprovalList_button{
+		width: 100px;
+		height: 100%;
+		text-align: center;
+		line-height: 42px;
+		float: right;
+		border: none;
+		font-size: 24px;
+	}
+
+	#managerAppointment_classroomApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 64px;
+		padding: 0 90px;
+		box-sizing: border-box;
+	}
+	#watchAppointment_classroomApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 64px;
+		padding: 0 90px;
+		box-sizing: border-box;
+	}
+	#watchSummary_classroomApprovalList >li{
+		width: 100%;
+		float: left;
+		margin-top: 64px;
+		padding: 0 90px;
+		box-sizing: border-box;
+	}
+}
