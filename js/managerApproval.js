@@ -4,6 +4,7 @@ if (!managerApproval)
 
 managerApproval.pageNum = 1;
 managerApproval.approvalDataList = [];
+managerApproval.refuseItem = '';
 managerApproval.onLoad = function(){
 
 	managerApproval.pageNum = 1;
@@ -90,30 +91,8 @@ managerApproval.doSearch = function(){
 	managerApproval.getManagerPageData(searchVal);
 };
 managerApproval.refuseBtnListener = function(e){
-	var applyUserId = $(e).parents("li").attr("id");
-
-	var applyUrl = Global.BASE_URL + VisitUrl.APPROVE;
-	var param = {
-		applyId : applyUserId,
-		applyStatus : "4"
-	}
-	LogicUtil.doLogic(applyUrl, false, param, [], function(datas) {
-		
-		for (var i = 0; i < managerApproval.approvalDataList.length; i++) {
-			if(applyUserId == managerApproval.approvalDataList[i].applyId){
-				managerApproval.approvalDataList[i].applyStatus = "4";
-				$(e).css("display","none");
-				$(e).next().css("display","none");
-				$(e).parents("li").find(".registApprovalList_type").append('<span class="fontColor_red">（已拒绝）</span>');
-				break;
-			}
-		}
-		common.getLeftCount(function(){
-			common.setLeftCountToPage("managerApproval");
-		});
-	});
-
-	
+	$("#dismissApplicationDialog").show();
+	managerApproval.refuseItem = e;
 };
 managerApproval.approvalBtnListener = function(e){
 	var applyUserId = $(e).parents("li").attr("id");
@@ -138,4 +117,43 @@ managerApproval.approvalBtnListener = function(e){
 		});
 	});
 	
+};
+managerApproval.reasonSubmit = function(){
+	var reason = $("#dismissApplReason").val();
+	if(reason == ''){
+		$("#dad_hint").css("visibility","visible");
+		return
+	}
+	$("#dad_hint").css("visibility","hidden");
+	if(managerApproval.refuseItem !== ''){
+		var applyUserId = $(managerApproval.refuseItem).parents("li").attr("id");
+		var applyUrl = Global.BASE_URL + VisitUrl.APPROVE;
+		var param = {
+			applyId : applyUserId,
+			reason : reason,
+			applyStatus : "4"
+		}
+		LogicUtil.doLogic(applyUrl, false, param, [], function(datas) {
+			
+			for (var i = 0; i < managerApproval.approvalDataList.length; i++) {
+				if(applyUserId == managerApproval.approvalDataList[i].applyId){
+					managerApproval.approvalDataList[i].applyStatus = "4";
+					$(managerApproval.refuseItem).css("display","none");
+					$(managerApproval.refuseItem).next().css("display","none");
+					$(managerApproval.refuseItem).parents("li").find(".registApprovalList_type").append('<span class="fontColor_red">（已拒绝）</span>');
+					break;
+				}
+			}
+			common.getLeftCount(function(){
+				common.setLeftCountToPage("managerApproval");
+			});
+			managerApproval.refuseItem = '';
+		});
+	}
+	
+};
+managerApproval.reasonCancel = function(){
+	managerApproval.refuseItem = ''
+	$("#dad_hint").css("visibility","hidden");
+	$("#dismissApplicationDialog").hide();
 };

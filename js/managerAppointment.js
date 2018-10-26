@@ -4,6 +4,7 @@ if (!managerAppointment)
 
 managerAppointment.pageNum = 1;
 managerAppointment.appointmentDataList = [];
+managerAppointment.refuseItem = ''
 managerAppointment.onLoad = function(){
 
 	managerAppointment.pageNum = 1;
@@ -116,30 +117,8 @@ managerAppointment.doSearch = function(){
 	managerAppointment.getManagerPageData(searchVal);
 };
 managerAppointment.refuseBtnListener = function(e){
-	var roomId = $(e).parents("li").attr("id");
-
-	var applyUrl = Global.BASE_URL + VisitUrl.APPROVE;
-	var param = {
-		applyId : roomId,
-		applyStatus : "4"
-	}
-	LogicUtil.doLogic(applyUrl, false, param, [], function(datas) {
-		for (var i = 0; i < managerAppointment.appointmentDataList.length; i++) {
-			if(roomId == managerAppointment.appointmentDataList[i].applyId){
-				managerAppointment.appointmentDataList[i].applyStatus = "4";
-				$(e).css("display","none");
-
-				$(e).next().css("display","none");
-				$(e).parents("li").find(".registApprovalList_name").append('<span class="fontColor_red">（已拒绝）</span>');
-				break;
-			}
-		}
-		
-		common.getLeftCount(function(){
-			common.setLeftCountToPage("managerAppointment");
-		});
-	});
-	
+	managerApproval.refuseItem = e;
+	$("#dismissApplicationDialog_appo").show();
 };
 managerAppointment.approvalBtnListener = function(e){
 	var roomId = $(e).parents("li").attr("id");
@@ -210,4 +189,44 @@ managerAppointment.doDelOrder = function(e){
 	LogicUtil.doLogic(Url, false, param, [], function(datas) {
 		$(e).parents("li").remove();
 	});
+};
+managerAppointment.reasonSubmit = function(){
+	var reason = $("#dismissApplReason_appo").val();
+	if(reason == ''){
+		$("#dad_appo_hint").css("visibility","visible");
+		return
+	}
+	$("#dad_appo_hint").css("visibility","hidden");
+	if(managerAppointment.refuseItem !== ''){
+		var roomId = $(managerAppointment.refuseItem).parents("li").attr("id");
+		var applyUrl = Global.BASE_URL + VisitUrl.APPROVE;
+		var param = {
+			applyId : roomId,
+			reason : reason,
+			applyStatus : "4"
+		}
+		LogicUtil.doLogic(applyUrl, false, param, [], function(datas) {
+			for (var i = 0; i < managerAppointment.appointmentDataList.length; i++) {
+				if(roomId == managerAppointment.appointmentDataList[i].applyId){
+					managerAppointment.appointmentDataList[i].applyStatus = "4";
+					$(managerAppointment.refuseItem).css("display","none");
+
+					$(managerAppointment.refuseItem).next().css("display","none");
+					$(managerAppointment.refuseItem).parents("li").find(".registApprovalList_name").append('<span class="fontColor_red">（已拒绝）</span>');
+					break;
+				}
+			}
+			
+			common.getLeftCount(function(){
+				common.setLeftCountToPage("managerAppointment");
+			});
+			managerAppointment.refuseItem = ''
+		});
+	}
+	
+};
+managerAppointment.reasonCancel = function(){
+	managerAppointment.refuseItem = ''
+	$("#dad_appo_hint").css("visibility","hidden");
+	$("#dismissApplicationDialog_appo").hide();
 };

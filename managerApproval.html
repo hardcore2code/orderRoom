@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
     <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
     <link rel="stylesheet" type="text/css" href="css/managerApproval.css">
+    <link rel="stylesheet" type="text/css" href="css/dialog.css">
 
     <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -94,6 +95,22 @@
         <ul id="managerApproval_registApprovalList">
         </ul>
         <div id="managerApproval_listMoreBtn" class="common_listMoreBtn bgColor_searchBg" onclick="managerApproval.getMoreListContent();">加载更多</div>
+    </div>
+    <div id="dismissApplicationDialog" class="dismissApplicationDialog">
+        <div class="dad_contentBg">
+            <div class="dad_reasonArea">
+                <textarea id="dismissApplReason" class="dad_reason" placeholder="请输入驳回原因"></textarea>
+            </div>
+            <div id="dad_hint" class="dad_hintArea">请输入驳回原因</div>
+            <div class="dad_btnArea">
+                <div class="dad_btnItem">
+                    <div class="dadBtn_cancel" onclick="managerApproval.reasonCancel()">取消</div>
+                </div>
+                <div class="dad_btnItem">
+                    <div class="dadBtn_ok" onclick="managerApproval.reasonSubmit()">提交</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
