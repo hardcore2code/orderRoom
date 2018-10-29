@@ -117,7 +117,7 @@ managerAppointment.doSearch = function(){
 	managerAppointment.getManagerPageData(searchVal);
 };
 managerAppointment.refuseBtnListener = function(e){
-	managerApproval.refuseItem = e;
+	managerAppointment.refuseItem = e;
 	$("#dismissApplicationDialog_appo").show();
 };
 managerAppointment.approvalBtnListener = function(e){
