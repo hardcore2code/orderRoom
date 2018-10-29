@@ -99,7 +99,7 @@
         <div id="managerAppointment_listMoreBtn" class="common_listMoreBtn bgColor_searchBg" onclick="managerAppointment.getMoreListContent();">加载更多</div>
         
     </div>
-    <div id="dismissApplicationDialog_appo" class="dismissApplicationDialog">
+    <div id="dismissApplicationDialog_appo" class="dismissApplicationDialog" oncontextmenu=self.event.returnValue=false onselectstart="return false">
         <div class="dad_contentBg">
             <div class="dad_reasonArea">
                 <textarea id="dismissApplReason_appo" class="dad_reason" placeholder="请输入驳回原因"></textarea>
