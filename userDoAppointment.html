@@ -74,6 +74,12 @@
                 </div>
                 <div class="leftToolBarSignItem_Title fontColor_black">查看汇总</div>
             </a>
+            <a class="leftToolBar_signItem common-manager common-admin common-user" href="appointmentSummary.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">预约汇总</div>
+            </a>
             <a class="leftToolBar_signItem" href="changePwd.html">
                 <div class="leftToolBarSignItem_signImgArea">
                     <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
@@ -115,7 +121,7 @@
             </div>
             <div class="userDoAppointment_itemBg">
                 <div class="fontColor_topNavTitle userDoAppointmentSelectItem_title">预计人数</div>
-                <input id="userDoAppointment_personNum" class="userDoAppointmentSelectItem_personNumInput" type="number"/>
+                <input id="userDoAppointment_personNum" class="userDoAppointmentSelectItem_personNumInput" type="number" onpaste="return false;"/>
                 <div id="userDoAppointment_personNumText" class="userDoAppointmentSelectItem_hintText fontColor_blue">房间 xxx 平方米；可容纳 xxx 人</div>
             </div>
             <div class="userDoAppointment_itemBg">
@@ -125,7 +131,7 @@
             </div>
             <div class="userDoAppointment_itemBg">
                 <div class="fontColor_topNavTitle userDoAppointmentSelectItem_title">会议内容</div>
-                <textarea id="userDoAppointment_meetingContent" class="userDoAppointmentSelectItem_meeting"></textarea>
+                <textarea id="userDoAppointment_meetingContent" class="userDoAppointmentSelectItem_meeting" onpaste="return false;"></textarea>
             </div>
             <button class="fontColor_wordWhite userDoAppointment_nextPageBtn bgColor_blue" onclick="userDoAppointment.changePage('2')">下一步</button>
         </div>

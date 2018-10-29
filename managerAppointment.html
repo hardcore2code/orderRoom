@@ -68,6 +68,12 @@
                 </div>
                 <div class="leftToolBarSignItem_Title fontColor_black">查看汇总</div>
             </a>
+            <a class="leftToolBar_signItem common-manager common-admin common-user" href="appointmentSummary.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">预约汇总</div>
+            </a>
             <a class="leftToolBar_signItem" href="changePwd.html">
                 <div class="leftToolBarSignItem_signImgArea">
                     <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
@@ -99,10 +105,10 @@
         <div id="managerAppointment_listMoreBtn" class="common_listMoreBtn bgColor_searchBg" onclick="managerAppointment.getMoreListContent();">加载更多</div>
         
     </div>
-    <div id="dismissApplicationDialog_appo" class="dismissApplicationDialog" oncontextmenu=self.event.returnValue=false onselectstart="return false">
+    <div id="dismissApplicationDialog_appo" class="dismissApplicationDialog">
         <div class="dad_contentBg">
             <div class="dad_reasonArea">
-                <textarea id="dismissApplReason_appo" class="dad_reason" placeholder="请输入驳回原因"></textarea>
+                <textarea id="dismissApplReason_appo" class="dad_reason" placeholder="请输入驳回原因" onpaste="return false;"></textarea>
             </div>
             <div id="dad_appo_hint" class="dad_hintArea">请输入驳回原因</div>
             <div class="dad_btnArea">
