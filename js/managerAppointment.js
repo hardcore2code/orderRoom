@@ -72,7 +72,7 @@ managerAppointment.getManagerPageData = function(content){
 
 				var timeItem = managerAppointment.getActionTime(timeItemStr);
 
-				itemStr += '<div class="classroomApprovalList_leftText">预约时间：' + ymd + ' ' + week + ' ' +  timeItem + '</div>'
+				itemStr += '<div class="classroomApprovalList_leftText cral_apprTime" data-timeText="' + ymd + ' ' + week + ' ' +  timeItem +'">预约时间：' + ymd + ' ' + week + ' ' +  timeItem + '</div>'
 
 			}
 
@@ -122,11 +122,14 @@ managerAppointment.refuseBtnListener = function(e){
 };
 managerAppointment.approvalBtnListener = function(e){
 	var roomId = $(e).parents("li").attr("id");
+	var apprTime = $(e).parents("li").find(".cral_apprTime").attr("data-timeText");
 
 	var applyUrl = Global.BASE_URL + VisitUrl.APPROVE;
 	var param = {
 		applyId : roomId,
-		applyStatus : "3"
+		reason : "",
+		applyStatus : "3",
+		approveDate : apprTime
 	}
 	LogicUtil.doLogic(applyUrl, false, param, [], function(datas) {
 		for (var i = 0; i < managerAppointment.appointmentDataList.length; i++) {
@@ -197,13 +200,16 @@ managerAppointment.reasonSubmit = function(){
 		return
 	}
 	$("#dad_appo_hint").css("visibility","hidden");
+
 	if(managerAppointment.refuseItem !== ''){
 		var roomId = $(managerAppointment.refuseItem).parents("li").attr("id");
+		var apprTime = $(managerAppointment.refuseItem).parents("li").find(".cral_apprTime").attr("data-timeText");
 		var applyUrl = Global.BASE_URL + VisitUrl.APPROVE;
 		var param = {
 			applyId : roomId,
 			reason : reason,
-			applyStatus : "4"
+			applyStatus : "4",
+			approveDate : apprTime
 		}
 		LogicUtil.doLogic(applyUrl, false, param, [], function(datas) {
 			for (var i = 0; i < managerAppointment.appointmentDataList.length; i++) {
