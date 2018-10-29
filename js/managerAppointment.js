@@ -226,7 +226,7 @@ managerAppointment.reasonSubmit = function(){
 			common.getLeftCount(function(){
 				common.setLeftCountToPage("managerAppointment");
 			});
-			managerAppointment.refuseItem = ''
+			managerAppointment.reasonCancel();
 		});
 	}
 	
