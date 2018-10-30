@@ -68,6 +68,7 @@ appointmentSummaryPerson.getPageData = function(content){
 		"lengthChange": true, //是否允许产品改变表格每页显示的记录数
 		"info": true,             // 控制是否显示表格左下角的信息
 		"pageLength": 10,      // 每页显示的条数
+		"bSort": false,
 		"columns":[
 			{data: 'name'},    // 有几列就解析几次
 			{data: 'tel'},
