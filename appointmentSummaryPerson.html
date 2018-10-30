@@ -9,32 +9,37 @@
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="bootstrap/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/common/datatables.min.css" />
+    
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
     <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
     <link rel="stylesheet" type="text/css" href="css/managerApproval.css">
+    <link rel="stylesheet" type="text/css" href="css/appointmentSummary.css">
     
 
     <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/common/Global.js"></script>
     <script type="text/javascript" src="js/common/LogicUtil.js"></script>
+    <script type="text/javascript" src="js/common/datatables.min.js"></script>
+
 
     <script type="text/javascript" src="js/common.js"></script>
-    <script type="text/javascript" src="js/watchAppointment.js"></script>
+    <script type="text/javascript" src="js/appointmentSummaryPerson.js"></script>
     
 </head>
-<body onload="watchAppointment.onLoad();">
-    <div id="watchAppointment" class="leftToolBar_bg bgColor_leftToolBar">
+<body onload="appointmentSummaryPerson.onLoad();">
+    <div id="appointmentSummaryPerson" class="leftToolBar_bg bgColor_leftToolBar">
         <div class="leftToolBar_userInfoArea">
             <img class="userInfoArea_headImg" src="image/head.png">
             <div class="userInfoArea_infoBg">
-                <div class="userInfoArea_userName"></div>
-                <div class="userInfoArea_mailAddr fontColor_wordGrey"></div>
+                <div class="userInfoArea_userName">admin</div>
+                <div class="userInfoArea_mailAddr fontColor_wordGrey">admin@163.com</div>
             </div>
         </div>
-        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-admin common-manager">查看预约</button>
+        <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-admin common-manager" onclick="common.toWatchAppointment();">查看预约</button>
         <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-user common-manager" style="margin-top: 10px;" onclick="common.toDoAppointment();">预约</button>
         <div class="leftToolBar_signItemArea">
             <a class="leftToolBar_signItem common-user common-manager" href="userAppointment.html">
@@ -77,7 +82,7 @@
                 </a>
                 <a class="leftToolBar_signItem2L fontColor_black" href="appointmentSummaryPerson.html">
                     <div class="leftToolBarSignItem_signImgArea">
-                        <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                        <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-down"></i>
                     </div>
                     <div class="leftToolBarSignItem_Title2L fontColor_black">按预约人统计</div>
                 </a>
@@ -104,18 +109,26 @@
     </div>
     <div class="topNavBarBg">
         <div class="topNavBar_searchBg">
-            <form onsubmit="watchAppointment.doSearch();return false;">
+            <!-- <form onsubmit="appointmentSummaryPerson.doSearch();return false;">
                 <div class="topNavBarSearch_input bgColor_searchBg">
                     <i class="fa fa-search fontColor_searchLogo"></i>
-                    <input id="watchAppointment_searchInput" type="text" placeholder="search">
+                    <input id="appointmentSummaryPerson_searchInput" type="text" placeholder="search">
                 </div>
-            </form>
+            </form> -->
         </div>
     </div>
     <div class="classroom_rightContent">
-        <ul id="watchAppointment_classroomApprovalList">
-        </ul>
-        <div id="managerApproval_listMoreBtn" class="common_listMoreBtn bgColor_searchBg" onclick="watchAppointment.getMoreListContent();">加载更多</div>
+        <div id="appointmentSummaryPerson_classroomApprovalList">
+            <table id="appointmentSummaryPerson_table" class="statistics_table table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th class="statistics_titleItem">编码</th>
+                    <th class="statistics_titleItem">职位</th>
+                    <th class="statistics_titleItem">姓名</th>
+                  </tr>
+               </thead>
+            </table>
+        </div>
     </div>
 </body>
 </html>

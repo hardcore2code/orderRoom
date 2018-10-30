@@ -25,5 +25,7 @@ var VisitUrl = {
 	RESETPWD : "resetpwd",
 	CHANGEPWD : "alterpwd",
 	CHECKTIMERIGHT : "checkBatch",
-	DELORDER : "del"
+	DELORDER : "del",
+	STATISTICS_CLASSROOM: "queryStats1",
+	STATISTICS_PERSON: "queryStats2"
 };

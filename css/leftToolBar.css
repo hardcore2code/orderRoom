@@ -67,6 +67,29 @@
 	box-sizing: border-box;
 	padding: 0 29px;
 }
+.leftToolBarSignItem_TitleL{
+	width: 212px;
+	height: 100%;
+	line-height: 34px;
+	float: left;
+	font-size: 17px;
+	box-sizing: border-box;
+	padding: 0 10px;
+}
+.leftToolBar_signItem2L{
+	width: 100%;
+	float: left;
+	height: 34px;
+	box-sizing: border-box;
+	padding: 0 40px;
+}
+.leftToolBarSignItem_Title2L{
+	width: 190px;
+	height: 100%;
+	line-height: 34px;
+	float: left;
+	font-size: 15px;
+}
 .leftToolBarSignItem_signImgArea{
 	width: 32px;
 	margin-right: 10px;
@@ -183,6 +206,29 @@
 		box-sizing: border-box;
 		padding: 0 38px;
 	}
+	.leftToolBarSignItem_TitleL{
+		width: 274px;
+		height: 100%;
+		line-height: 44px;
+		float: left;
+		font-size: 20px;
+		box-sizing: border-box;
+		padding: 0 12px;
+	}
+	.leftToolBar_signItem2L{
+		width: 100%;
+		float: left;
+		height: 44px;
+		box-sizing: border-box;
+		padding: 0 50px;
+	}
+	.leftToolBarSignItem_Title2L{
+		width: 250px;
+		height: 100%;
+		line-height: 44px;
+		float: left;
+		font-size: 18px;
+	}
 	.leftToolBarSignItem_signImgArea{
 		width: 40px;
 		margin-right: 10px;
@@ -297,6 +343,29 @@
 		height: 62px;
 		box-sizing: border-box;
 		padding: 0 57px;
+	}
+	.leftToolBarSignItem_TitleL{
+		width: 394px;
+		height: 100%;
+		line-height: 62px;
+		float: left;
+		font-size: 27px;
+		box-sizing: border-box;
+		padding: 0 15px;
+	}
+	.leftToolBar_signItem2L{
+		width: 100%;
+		float: left;
+		height: 62px;
+		box-sizing: border-box;
+		padding: 0 69px;
+	}
+	.leftToolBarSignItem_Title2L{
+		width: 370px;
+		height: 100%;
+		line-height: 62px;
+		float: left;
+		font-size: 25px;
 	}
 	.leftToolBarSignItem_signImgArea{
 		width: 58px;

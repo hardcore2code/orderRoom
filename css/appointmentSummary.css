@@ -1,0 +1,17 @@
+#appointmentSummary_classroomApprovalList {
+  padding: 0 3.5%;
+  box-sizing: border-box;
+}
+#appointmentSummaryPerson_classroomApprovalList{
+  padding: 0 3.5%;
+  box-sizing: border-box;
+}
+.dataTables_scrollHeadInner{
+  width: 100%!important;
+}
+.statistics_table{
+  width: 100%!important;
+}
+.statistics_titleItem{
+  width: 33.33%!important;
+}
