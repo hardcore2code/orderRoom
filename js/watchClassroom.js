@@ -23,10 +23,10 @@ watchClassroom.onLoad = function(){
 	}else if(authType == "manager"){
 		common.setLeftToolAuth("watchClassroom","manager");
 	}
-	var myDate = new Date();
+	// var myDate = new Date();
 	$("#watchClassroom_datepicker" ).datepicker({
 		inline: true,
-		minDate: myDate,
+		// minDate: myDate,
 		onSelect: function (dateText, inst) {
 				watchClassroom.beginDate = inst.selectedYear + "-" +(inst.selectedMonth + 1) + "-" + inst.selectedDay;
 				watchClassroom.timeDataPush(watchClassroom.beginDate);
