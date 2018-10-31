@@ -8,6 +8,7 @@
 }
 .dataTables_scrollHeadInner{
   width: 100%!important;
+  box-sizing: border-box;
 }
 .statistics_table{
   width: 100%!important;
