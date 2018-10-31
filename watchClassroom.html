@@ -16,8 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
     <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
-    <link rel="stylesheet" type="text/css" href="css/userDoAppointment.css">
-    <link rel="stylesheet" type="text/css" href="css/blacklist.css">
+    <link rel="stylesheet" type="text/css" href="css/watchClassroom.css">
 
     <!-- <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script> -->
     <script src="js/jqueryUI/external/jquery/jquery.js"></script>
@@ -28,26 +27,26 @@
     <script type="text/javascript" src="js/common/LogicUtil.js"></script>
 
     <script type="text/javascript" src="js/common.js"></script>
-    <script type="text/javascript" src="js/blacklistSetting.js"></script>
+    <script type="text/javascript" src="js/watchClassroom.js"></script>
 
     
     
 </head>
-<body onload="blacklistSetting.onLoad();">
-    <div id="blacklistSetting" class="leftToolBar_bg bgColor_leftToolBar">
+<body onload="watchClassroom.onLoad();" oncontextmenu=self.event.returnValue=false onselectstart="return false">
+    <div id="watchClassroom" class="leftToolBar_bg bgColor_leftToolBar">
         <div class="leftToolBar_userInfoArea">
             <img class="userInfoArea_headImg" src="image/head.png">
             <div class="userInfoArea_infoBg">
-                <div class="userInfoArea_userName">admin</div>
-                <div class="userInfoArea_mailAddr fontColor_wordGrey">admin@163.com</div>
+                <div class="userInfoArea_userName"></div>
+                <div class="userInfoArea_mailAddr fontColor_wordGrey"></div>
             </div>
         </div>
         <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-admin common-manager" onclick="common.toWatchAppointment();">查看预约</button>
         <button class="leftToolBar_button fontColor_wordWhite bgColor_blue common-user common-manager" style="margin-top: 10px;" onclick="common.toDoAppointment();">预约</button>
         <div class="leftToolBar_signItemArea">
-            <a class="leftToolBar_signItem common-manager common-user common-admin" href="watchClassroom.html">
+            <a class="leftToolBar_signItem common-manager common-user common-admin">
                 <div class="leftToolBarSignItem_signImgArea">
-                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-down"></i>
                 </div>
                 <div class="leftToolBarSignItem_Title fontColor_black">查看会议室</div>
             </a>
@@ -57,17 +56,17 @@
                 </div>
                 <div class="leftToolBarSignItem_Title fontColor_black">我的申请（<span class="myUnApprovedCount"></span>）</div>
             </a>
+            <a class="leftToolBar_signItem common-manager" href="managerAppointment.html">
+                <div class="leftToolBarSignItem_signImgArea">
+                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
+                </div>
+                <div class="leftToolBarSignItem_Title fontColor_black">预约审批（<span class="unManagerApprovedCount"></span>）</div>
+            </a>
             <a class="leftToolBar_signItem common-admin" href="managerApproval.html">
                 <div class="leftToolBarSignItem_signImgArea">
                     <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
                 </div>
                 <div class="leftToolBarSignItem_Title fontColor_black">注册审批（<span class="unApprovedCount"></span>）</div>
-            </a>
-            <a class="leftToolBar_signItem common-manager">
-                <div class="leftToolBarSignItem_signImgArea">
-                    <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
-                </div>
-                <div class="leftToolBarSignItem_Title fontColor_black">预约审批（<span class="unManagerApprovedCount"></span>）</div>
             </a>
             <a class="leftToolBar_signItem common-admin" href="blacklist.html">
                 <div class="leftToolBarSignItem_signImgArea">
@@ -119,35 +118,84 @@
             </a>
         </div>
     </div>
-    <div class="classroom_appointmentRightContent" style="padding-top: 0;">
-        <div class="userDoAppointment_bg" style="display: block;">
-            <div class="userDoAppointment_title">选择时间</div>
-            <div class="userDoAppointment_typeItemBg" onclick="blacklistSetting.chooseAppointmentType(this,'0');" style="display: none;">
-                <div class="userDoAppointment_typeItem">
-                    <div class="userDoAppointment_typeAreaSign">
-                        <img class="userDoAppointment_typeImg" src="image/checkbox_o.png">
-                    </div>
-                    <div class="userDoAppointment_typeAreaTitle">单次</div>
-                    <div class="userDoAppointment_typeAreaHint fontColor_wordGrey">只对当次时间段做黑名单限制，当超出时间范围，自动解除</div>
+    <div class="classroom_appointmentRightContent">
+        <div id="watchClassroom_page1" class="watchClassroom_bg">
+            <div class="watchClassroom_itemSelectBg">
+                <div class="watchClassroom_selectItemBg">
+                    <div class="fontColor_topNavTitle watchClassroomSelectItem_title">管理单位</div>
+                    <select id="watchClassroom_managerCompany" class="watchClassroomSelectItem_select" onchange="watchClassroom.changeSelect(this,'0');">
+                    </select>
+                </div>
+                <div class="watchClassroom_selectItemBg">
+                     <div class="fontColor_topNavTitle watchClassroomSelectItem_title">楼宇</div>
+                     <select id="watchClassroom_building" class="watchClassroomSelectItem_select" onchange="watchClassroom.changeSelect(this,'1');">
+                    </select>
+                </div>
+                <div class="watchClassroom_selectItemBg">
+                     <div class="fontColor_topNavTitle watchClassroomSelectItem_title" onchange="watchClassroom.changeSelect(this,'2');">房间号</div>
+                     <select id="watchClassroom_room" class="watchClassroomSelectItem_select">
+                    </select>
                 </div>
             </div>
-            <div class="userDoAppointment_typeItemBg" onclick="blacklistSetting.chooseAppointmentType(this,'1');" style="display: none;">
-                <div class="userDoAppointment_typeItem">
-                    <div class="userDoAppointment_typeAreaSign">
-                        <img class="userDoAppointment_typeImg" src="image/checkbox.png">
-                    </div>
-                    <div class="userDoAppointment_typeAreaTitle">批量</div>
-                    <div class="userDoAppointment_typeAreaHint fontColor_wordGrey">永久设置为黑名单</div>
+            <div id="watchClassroom_datepicker" class="watchClassroom_datepicker"></div>
+            <div id="watchClassroom_timepicker">
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_8" class="watchClassroom_timeItem" title="">8点-9点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_9" class="watchClassroom_timeItem" title="">9点-10点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_10" class="watchClassroom_timeItem" title="">10点-11点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_11" class="watchClassroom_timeItem" title="">11点-12点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_12" class="watchClassroom_timeItem" title="">12点-13点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_13" class="watchClassroom_timeItem" title="">13点-14点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_14" class="watchClassroom_timeItem" title="">14点-15点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_15" class="watchClassroom_timeItem" title="">15点-16点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_16" class="watchClassroom_timeItem" title="">16点-17点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_17" class="watchClassroom_timeItem" title="">17点-18点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_18" class="watchClassroom_timeItem" title="">18点-19点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_19" class="watchClassroom_timeItem" title="">19点-20点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_20" class="watchClassroom_timeItem" title="">20点-21点</div>
+                    <div class="timeItem_hintText"></div>
+                </div>
+                <div class="watchClassroom_timeItemBg">
+                    <div id="timeItem_21" class="watchClassroom_timeItem" title="">21点-22点</div>
+                    <div class="timeItem_hintText"></div>
                 </div>
             </div>
-            <div class="blacklist_batchItemTitle fontColor_title">时间范围</div>
-            <div class="blacklist_batchItemDatePickerBg">
-                <input id="batchDatepicker_beginDate" type="text" class="blacklist_batchDatePicker">
-                <div class="blacklist_line">-</div>
-                <input id="batchDatepicker_endDate" type="text" class="blacklist_batchDatePicker">
-            </div>
-            <button class="fontColor_blue userDoAppointment_prevPageBtn bgColor_white" onclick="blacklistSetting.toBlacklist()">上一步</button>
-            <button class="fontColor_wordWhite userDoAppointment_nextPageBtn bgColor_blue" onclick="blacklistSetting.doSubmitSetting()">完成</button>
         </div>
     </div>
 </body>
