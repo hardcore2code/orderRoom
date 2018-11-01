@@ -37,7 +37,6 @@ watchClassroom.onLoad = function(){
 		common.setLeftCountToPage("watchClassroom");
 		watchClassroom.getSelectRoom("1");
 	});
-	watchClassroom.getSelectRoom("1");
 
 };
 watchClassroom.changeSelect = function(e,type){
@@ -57,7 +56,7 @@ watchClassroom.changeSelect = function(e,type){
 		var unitSelect = $("#watchClassroom_managerCompany").children('option:selected').val();
 		watchClassroom.getSelectRoom("3",unitSelect,value);
 	}else if(type == "2"){
-		userDoAppointment.roomId = $("#userDoAppointment_room").children('option:selected').val();
+		watchClassroom.roomId = $("#watchClassroom_room").children('option:selected').val();
 		var myDate = new Date();
 		watchClassroom.beginDate = myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate();
 

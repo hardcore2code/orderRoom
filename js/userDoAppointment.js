@@ -17,12 +17,15 @@ userDoAppointment.tools = "";
 userDoAppointment.beginDate = "";
 userDoAppointment.timeData = [];
 
+userDoAppointment.ifcheckrepeat = "0";
+
 userDoAppointment.onLoad = function(){
 
 	userDoAppointment.pageNum = "";
 	userDoAppointment.changePage("1");
 	userDoAppointment.appointmentType = "0";
 	userDoAppointment.cycleMode = "";
+	userDoAppointment.ifcheckrepeat = "0"
 
 	var tel = localStorage.getItem("tel") ? localStorage.getItem("tel") : '';
 	var email = localStorage.getItem("mail") ? localStorage.getItem("mail") : '';
@@ -42,6 +45,7 @@ userDoAppointment.onLoad = function(){
 
 };
 userDoAppointment.changePage = function(pageNum){
+	console.log(pageNum)
 	if(userDoAppointment.pageNum != pageNum){
 
 		if(pageNum == "2"){
@@ -116,8 +120,6 @@ userDoAppointment.changePage = function(pageNum){
 				return;
 			}
 
-			
-
 			var url = Global.BASE_URL + VisitUrl.ORDERROOM;
 			var param = {
 				roomId : userDoAppointment.roomId,
@@ -127,7 +129,8 @@ userDoAppointment.changePage = function(pageNum){
 				type : userDoAppointment.appointmentType,
 				loopType : "",
 				enddate : "",
-				orderdate : userDoAppointment.beginDate
+				orderdate : userDoAppointment.beginDate,
+				ifcheckrepeat: userDoAppointment.ifcheckrepeat
 			};
 
 			param.time89 = userDoAppointment.timeData[0].state == "2" ? "1" : "0";
@@ -146,22 +149,27 @@ userDoAppointment.changePage = function(pageNum){
 			param.time2122 = userDoAppointment.timeData[13].state == "2" ? "1" : "0";
 
 			LogicUtil.doLogic(url, false, param, [], function(e) {
-				pageNum = "3";
-				if(userDoAppointment.pageNum != ""){
-					$("#appointmentTopNav_page" + userDoAppointment.pageNum).removeClass('appointmentTopNavBar_onChoose');
-					$("#userDoAppointment_page" + userDoAppointment.pageNum).hide();
+
+				if(e.resFlagRepeat && e.resFlagRepeat === '0'){
+					$("#dismissApplicationDialog_udaText").text(e.msg)
+					$("#dismissApplicationDialog_uda").show();
+				}else{
+					pageNum = "3";
+					if(userDoAppointment.pageNum != ""){
+						$("#appointmentTopNav_page" + userDoAppointment.pageNum).removeClass('appointmentTopNavBar_onChoose');
+						$("#userDoAppointment_page" + userDoAppointment.pageNum).hide();
+					}
+					$("#appointmentTopNav_page" + pageNum).addClass('appointmentTopNavBar_onChoose');
+					$("#userDoAppointment_page" + pageNum).show();
+					userDoAppointment.pageNum = pageNum;
+
+					common.getLeftCount(function(){
+						common.setLeftCountToPage("userDoAppointment");
+					});
 				}
-				$("#appointmentTopNav_page" + pageNum).addClass('appointmentTopNavBar_onChoose');
-				$("#userDoAppointment_page" + pageNum).show();
-				userDoAppointment.pageNum = pageNum;
-
-				common.getLeftCount(function(){
-					common.setLeftCountToPage("userDoAppointment");
-				});
-
-		    },function(error){
-		    	console.log(error);
-		    });
+			},function(error){
+				console.log(error);
+			});
 			
 		}else{
 			if(userDoAppointment.pageNum != ""){
@@ -203,7 +211,7 @@ userDoAppointment.changePage = function(pageNum){
 					return;
 				}
 
-				
+				console.log("bbbb")
 				var param = {
 					roomId : userDoAppointment.roomId,
 					personNum : userDoAppointment.personNum,
@@ -506,4 +514,14 @@ userDoAppointment.deviceChoose = function(e){
 	}else{
 		self.removeClass('uda_deviceSelect');
 	}
+};
+userDoAppointment.cancel = function(){
+	$("#dismissApplicationDialog_udaText").text("")
+	$("#dismissApplicationDialog_uda").hide();
+	userDoAppointment.ifcheckrepeat = "0"
+};
+userDoAppointment.goonSubmit = function(){
+	userDoAppointment.ifcheckrepeat = "1"
+	userDoAppointment.changePage("");
+	userDoAppointment.cancel();
 };

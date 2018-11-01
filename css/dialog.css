@@ -80,3 +80,7 @@
 	width: 100%;
 	margin-top: 10px;
 }
+#dismissApplicationDialog_udaText{
+	padding: 25px 10px;
+	box-sizing: border-box;
+}

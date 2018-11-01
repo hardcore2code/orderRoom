@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="css/leftToolBar.css">
     <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
     <link rel="stylesheet" type="text/css" href="css/userDoAppointment.css">
+    <link rel="stylesheet" type="text/css" href="css/dialog.css">
+
 
     <!-- <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script> -->
     <script src="js/jqueryUI/external/jquery/jquery.js"></script>
@@ -104,7 +106,7 @@
                 </div>
                 <div class="leftToolBarSignItem_Title fontColor_black">修改密码</div>
             </a>
-            <a class="leftToolBar_signItem common-manager common-admin common-user" href="">
+            <a class="leftToolBar_signItem common-manager common-admin common-user" href="phone.html">
                 <div class="leftToolBarSignItem_signImgArea">
                     <i class="fontColor_blue leftToolBarSignItem_signImg fa fa-caret-right"></i>
                 </div>
@@ -266,6 +268,19 @@
             </div>
             <button class="fontColor_blue userDoAppointment_prevPageBtn bgColor_white" onclick="userDoAppointment.changePage('2')">上一步</button>
             <button class="fontColor_wordWhite userDoAppointment_nextPageBtn bgColor_blue" onclick="userDoAppointment.changePage('3')">下一步</button>
+        </div>
+    </div>
+    <div id="dismissApplicationDialog_uda" class="dismissApplicationDialog">
+        <div class="dad_contentBg">
+            <div id="dismissApplicationDialog_udaText" class="dad_reasonArea"></div>
+            <div class="dad_btnArea">
+                <div class="dad_btnItem">
+                    <div class="dadBtn_cancel" onclick="userDoAppointment.cancel()">取消</div>
+                </div>
+                <div class="dad_btnItem">
+                    <div class="dadBtn_ok" onclick="userDoAppointment.goonSubmit()">继续下一步</div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
