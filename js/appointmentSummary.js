@@ -4,6 +4,8 @@ if (!appointmentSummary)
 
 appointmentSummary.table = "";
 appointmentSummary.searchVal = "";
+appointmentSummary.beginDate = "";
+appointmentSummary.endDate = "2999-01-01";
 appointmentSummary.onLoad = function(){
 
 	var authType = localStorage.getItem("role");
@@ -27,6 +29,25 @@ appointmentSummary.onLoad = function(){
 appointmentSummary.getPageData = function(){
 	common.getLeftCount(function(){
 		common.setLeftCountToPage("appointmentSummary");
+
+		$("#begin_datepicker").append('<input type="text" class="as_batchDatePicker">');
+		$("#begin_datepicker").find("input").datepicker({  
+				dateFormat:"yy-mm-dd",
+				// minDate: userDoAppointment.beginDate
+				onSelect: function (dateText, inst) {
+					appointmentSummary.beginDate = inst.selectedYear + "-" +(inst.selectedMonth + 1) + "-" + inst.selectedDay;
+					appointmentSummary.table.ajax.reload();
+				}
+		});
+		$("#end_datepicker").append('<input type="text" class="as_batchDatePicker">');
+		$("#end_datepicker").find("input").datepicker({  
+				dateFormat:"yy-mm-dd",
+				// minDate: userDoAppointment.beginDate
+				onSelect: function (dateText, inst) {
+					appointmentSummary.endDate = inst.selectedYear + "-" +(inst.selectedMonth + 1) + "-" + inst.selectedDay;
+					appointmentSummary.table.ajax.reload();
+				}
+		});
 
 		var url = Global.BASE_URL + VisitUrl.STATISTICS_CLASSROOM;
 		appointmentSummary.table = $('#appointmentSummary_table').DataTable({
@@ -69,10 +90,13 @@ appointmentSummary.getPageData = function(){
 				{data: 'name'} 
 			],
 			ajax:function(data, callback, settings){
+
 				var param = {
 					pn: ((data.start/data.length) +1)+"",
 					name: appointmentSummary.searchVal,
-					ps: data.length +""
+					ps: data.length +"",
+					begindate: appointmentSummary.beginDate,
+					enddate: appointmentSummary.endDate
 				};
 				LogicUtil.doLogic(url, false, param, [], function(e) {
 					var res = {}

@@ -220,7 +220,8 @@ userDoAppointment.changePage = function(pageNum){
 					type : userDoAppointment.appointmentType,
 					loopType : userDoAppointment.cycleMode,
 					enddate : endDate,
-					orderdate : userDoAppointment.beginDate
+					orderdate : userDoAppointment.beginDate,
+					ifcheckrepeat: userDoAppointment.ifcheckrepeat
 				};
 
 				param.time89 = userDoAppointment.timeData[0].state == "2" ? "1" : "0";
@@ -241,24 +242,29 @@ userDoAppointment.changePage = function(pageNum){
 				LogicUtil.doLogic(checkurl, false, param, [], function(e) {
 					var url = Global.BASE_URL + VisitUrl.ORDERROOM;
 					LogicUtil.doLogic(url, false, param, [], function(e) {
-						$("#appointmentTopNav_page2").removeClass('appointmentTopNavBar_onChoose');
-						$("#userDoAppointment_page" + userDoAppointment.pageNum).hide();
 
-						$("#appointmentTopNav_page" + pageNum).addClass('appointmentTopNavBar_onChoose');
-						$("#userDoAppointment_page" + pageNum).show();
+						if(e.resFlagRepeat && e.resFlagRepeat === '0'){
+							$("#dismissApplicationDialog_udaText").text(e.msg)
+							$("#dismissApplicationDialog_uda").show();
+						}else{
+							$("#appointmentTopNav_page2").removeClass('appointmentTopNavBar_onChoose');
+							$("#userDoAppointment_page" + userDoAppointment.pageNum).hide();
 
-						userDoAppointment.pageNum = pageNum;
+							$("#appointmentTopNav_page" + pageNum).addClass('appointmentTopNavBar_onChoose');
+							$("#userDoAppointment_page" + pageNum).show();
 
-						common.getLeftCount(function(){
-							common.setLeftCountToPage("userDoAppointment");
-						});
+							userDoAppointment.pageNum = pageNum;
 
-				    },function(error){
-				    	console.log(error);
-				    });
-			    },function(error){
-			    	console.log(error);
-			    });
+							common.getLeftCount(function(){
+								common.setLeftCountToPage("userDoAppointment");
+							});
+						}
+					},function(error){
+						console.log(error);
+					});
+				},function(error){
+					console.log(error);
+				});
 			    
 			}else{
 				$("#appointmentTopNav_page" + pageNum).addClass('appointmentTopNavBar_onChoose');
@@ -522,6 +528,11 @@ userDoAppointment.cancel = function(){
 };
 userDoAppointment.goonSubmit = function(){
 	userDoAppointment.ifcheckrepeat = "1"
-	userDoAppointment.changePage("");
+	console.log(userDoAppointment.pageNum);
+	if(userDoAppointment.pageNum == "4"){
+		userDoAppointment.changePage("3");
+	}else{
+		userDoAppointment.changePage("");
+	}
 	userDoAppointment.cancel();
 };

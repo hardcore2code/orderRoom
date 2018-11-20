@@ -7,6 +7,7 @@
 	height: 100%;
 	z-index: 10;
 	opacity: 0.94;
+	overflow-y: scroll;
 }
 .leftToolBar_userInfoArea{
 	width: 100%;
@@ -23,7 +24,7 @@
 	margin: 0 16px 0 20px;
 }
 .userInfoArea_infoBg{
-	width: 224px;
+	width: 204px;
 	height: 52px;
 	float: left;
 }
@@ -68,7 +69,7 @@
 	padding: 0 29px;
 }
 .leftToolBarSignItem_TitleL{
-	width: 212px;
+	width: 192px;
 	height: 100%;
 	line-height: 34px;
 	float: left;
@@ -84,7 +85,7 @@
 	padding: 0 40px;
 }
 .leftToolBarSignItem_Title2L{
-	width: 190px;
+	width: 170px;
 	height: 100%;
 	line-height: 34px;
 	float: left;
@@ -99,7 +100,7 @@
 	text-align: center;
 }
 .leftToolBarSignItem_Title{
-	width: 212px;
+	width: 192px;
 	height: 100%;
 	line-height: 34px;
 	float: left;
@@ -146,6 +147,7 @@
 		top: 0;
 		height: 100%;
 		z-index: 10;
+		overflow-y: scroll;
 	}
 	.leftToolBar_userInfoArea{
 		width: 100%;
@@ -162,7 +164,7 @@
 		margin: 0 23px 0 26px;
 	}
 	.userInfoArea_infoBg{
-		width: 270px;
+		width: 250px;
 		height: 70px;
 		float: left;
 	}
@@ -207,7 +209,7 @@
 		padding: 0 38px;
 	}
 	.leftToolBarSignItem_TitleL{
-		width: 274px;
+		width: 254px;
 		height: 100%;
 		line-height: 44px;
 		float: left;
@@ -223,7 +225,7 @@
 		padding: 0 50px;
 	}
 	.leftToolBarSignItem_Title2L{
-		width: 250px;
+		width: 230px;
 		height: 100%;
 		line-height: 44px;
 		float: left;
@@ -238,7 +240,7 @@
 		text-align: center;
 	}
 	.leftToolBarSignItem_Title{
-		width: 274px;
+		width: 254px;
 		height: 100%;
 		line-height: 44px;
 		float: left;
@@ -284,6 +286,7 @@
 		top: 0;
 		height: 100%;
 		z-index: 10;
+		overflow-y: scroll;
 	}
 	.leftToolBar_userInfoArea{
 		width: 100%;
@@ -300,7 +303,7 @@
 		margin: 0 30px 0 38px;
 	}
 	.userInfoArea_infoBg{
-		width: 418px;
+		width: 398px;
 		height: 100px;
 		float: left;
 	}
@@ -345,7 +348,7 @@
 		padding: 0 57px;
 	}
 	.leftToolBarSignItem_TitleL{
-		width: 394px;
+		width: 374px;
 		height: 100%;
 		line-height: 62px;
 		float: left;
@@ -361,7 +364,7 @@
 		padding: 0 69px;
 	}
 	.leftToolBarSignItem_Title2L{
-		width: 370px;
+		width: 350px;
 		height: 100%;
 		line-height: 62px;
 		float: left;
@@ -376,7 +379,7 @@
 		text-align: center;
 	}
 	.leftToolBarSignItem_Title{
-		width: 394px;
+		width: 374px;
 		height: 100%;
 		line-height: 62px;
 		float: left;

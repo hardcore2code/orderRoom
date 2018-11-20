@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="bootstrap/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="js/common/datatables.min.css" />
+
+    <link href="./js/jqueryUI/jquery-ui.css" rel="stylesheet">
     
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" href="css/common.css" />
@@ -17,13 +19,15 @@
     <link rel="stylesheet" type="text/css" href="css/topNavBar.css">
     <link rel="stylesheet" type="text/css" href="css/managerApproval.css">
     <link rel="stylesheet" type="text/css" href="css/appointmentSummary.css">
-    
+    <link rel="stylesheet" type="text/css" href="css/userDoAppointment.css">
 
-    <script type="text/javascript" src="js/common/jquery-1.10.2.min.js"></script>
+
+    <script src="./js/jqueryUI/external/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/common/datatables.min.js"></script>
+    <script src="./js/jqueryUI/jquery-ui.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/common/Global.js"></script>
     <script type="text/javascript" src="js/common/LogicUtil.js"></script>
-    <script type="text/javascript" src="js/common/datatables.min.js"></script>
 
 
     <script type="text/javascript" src="js/common.js"></script>
@@ -128,6 +132,8 @@
     </div>
     <div class="classroom_rightContent">
         <div id="appointmentSummary_classroomApprovalList">
+            <div id="begin_datepicker" class="as_batchItemDatePickerBg">开始时间：</div>
+            <div id="end_datepicker" class="as_batchItemDatePickerBg">结束时间：</div>
             <table id="appointmentSummary_table" class="statistics_table table table-striped table-bordered">
                 <thead>
                   <tr>

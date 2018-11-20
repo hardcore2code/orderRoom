@@ -253,6 +253,20 @@
 	box-shadow: 0 1px 3px #ccc;
 	padding: 0 9px;
 }
+.as_batchItemDatePickerBg{
+	float: left;
+	height: 56px;
+	padding-right: 18px;
+}
+.as_batchDatePicker{
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	float: right;
+	border: none;
+	box-shadow: 0 1px 3px #ccc;
+	padding: 0 9px;
+}
 /* 成功页 */
 .userDoAppointment_successBg{
 	width: 100%;
@@ -495,7 +509,6 @@
 		text-align: center;
 	}
 	.userDoAppointment_batchItemDatePickerBg{
-		width: 100%;
 		float: left;
 		height: 70px;
 		padding: 0 12px;
@@ -505,6 +518,20 @@
 		height: 36px;
 		line-height: 36px;
 		float: left;
+		border: none;
+		box-shadow: 0 1px 3px #ccc;
+		padding: 0 12px;
+	}
+	.as_batchItemDatePickerBg{
+		float: left;
+		height: 70px;
+		padding-right: 24px;
+	}
+	.as_batchDatePicker{
+		width: 200px;
+		height: 36px;
+		line-height: 36px;
+		float: right;
 		border: none;
 		box-shadow: 0 1px 3px #ccc;
 		padding: 0 12px;
@@ -761,6 +788,20 @@
 		height: 46px;
 		line-height: 46px;
 		float: left;
+		border: none;
+		box-shadow: 0 1px 3px #ccc;
+		padding: 0 17px;
+	}
+	.as_batchItemDatePickerBg{
+		float: left;
+		height: 102px;
+		padding-right: 34px;
+	}
+	.as_batchDatePicker{
+		width: 250px;
+		height: 46px;
+		line-height: 46px;
+		float: right;
 		border: none;
 		box-shadow: 0 1px 3px #ccc;
 		padding: 0 17px;
